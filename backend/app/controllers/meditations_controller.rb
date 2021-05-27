@@ -12,9 +12,9 @@ class MeditationsController < ApplicationController
       def create
         meditation = Meditation.new(meditation_params)
         if meditation.save
-          render json: meditation, status: :created, location: meditation
+          render json: meditation
         else
-          render json: meditation.errors, status: :unprocessable_entity
+          #errors
         end
       end
     
@@ -23,8 +23,7 @@ class MeditationsController < ApplicationController
         if meditation.update(meditation_params)
           render json: meditation
         else
-          render json: meditation.errors, status: :unprocessable_entity
-        end
+          #errors
       end
     
       def destroy
