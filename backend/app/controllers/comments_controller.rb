@@ -2,11 +2,12 @@ class CommentsController < ApplicationController
 
       def index
         comments = Comment.all
-        render json: comments
+        render json: CommentSerializer.new(comments)
       end
     
       def show
-        render json: comment
+        comment = Comment.find(comment_params[:id])
+        render json: CommentSerializer.new(comment)
       end
     
       def create
