@@ -1,4 +1,6 @@
 class Meditation < ApplicationRecord
     has_many :comments
-    mount_uploader :audio, AudioUploader
+    has_one_attached :meditation_audio
+
+    # mount_uploader :audio, AudioUploader
 end
