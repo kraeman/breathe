@@ -60,5 +60,6 @@ class Meditation {
          } else {
             console.log('getUserMedia not supported on your browser!');
          }
-       }  
+       }
+         
 }
