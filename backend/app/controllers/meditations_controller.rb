@@ -33,7 +33,7 @@ class MeditationsController < ApplicationController
 
       def attach_audio
         meditation = Meditation.find(params[:id])
-        a = meditation.audio.attach(params[:audio])
+        a = meditation.audio.attach(meditation_params[:audio])
         url = Rails.application.routes.url_helpers.rails_blob_url(a.first, only_path: true)
         render json: {message: "Attached to File", url: url}
       end
