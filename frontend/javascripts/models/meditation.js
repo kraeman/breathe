@@ -1,8 +1,9 @@
 class Meditation {
    static all = []
 
-   constructor({text}) {
+   constructor({text, audio}) {
         this.text = text
+        this.audio = audio
         Meditation.all.push(this)
     }
 

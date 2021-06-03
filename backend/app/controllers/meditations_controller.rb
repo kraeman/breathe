@@ -10,6 +10,7 @@ class MeditationsController < ApplicationController
       end
     
       def create
+        byebug
         meditation = Meditation.new(meditation_params)
         if meditation.save
           render json: meditation
@@ -38,6 +39,6 @@ class MeditationsController < ApplicationController
       private
 
         def meditation_params
-          params.require(:meditation).permit(:text)
+          params.require(:meditation).permit(:text, :audio)
         end
 end

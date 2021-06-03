@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     getUserMedia()
-    submitTextButton().addEventListener("click", onMeditationSubmitClick)
+    // submitTextButton().addEventListener("click", onMeditationSubmitClick)
     stopRecordingButton().addEventListener("click", stoppy)
     StartRecordingButton().addEventListener("click", starty)
   })
@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if(textBox().value) {
       
       MeditationApi.postMeditation()
-      
-      
-      
     }
   }
   
@@ -43,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.innerHTML = "Delete";
       clipLabel.innerHTML = clipName;
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      MeditationApi.persistAudio(blob)
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
