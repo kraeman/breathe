@@ -49,3 +49,16 @@
 
 //     startButton.addEventListener("click", (e) => Watch.startTimer())
 //   }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    submitTextButton().addEventListener("click", onClick)
+})
+
+const onClick = (event) => {
+    if(textBox().value) {
+        const li = document.createElement("li")
+        li.innerHTML = textBox().value
+        listOfMeditations().appendChild(li)
+    }
+}

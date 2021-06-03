@@ -73,15 +73,3 @@
 // }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-   console.log("Hello")
-   submitTextButton.addEventListener("click", (e) => {
-   
-      const li = document.createElement("li")
-      li.innerHTML = textBox.value
-      listOfMeditations.appendChild(li)
-      debugger
-   
-   })
-})
-
