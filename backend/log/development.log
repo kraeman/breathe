@@ -622,3 +622,91 @@ Completed 204 No Content in 1230ms (ActiveRecord: 0.7ms | Allocations: 311175)
   [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mMeditation Load (0.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/meditations" for ::1 at 2021-06-03 19:23:09 -0400
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007f8491f30ee0 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32963-s2i5bd>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 204 No Content in 467ms (ActiveRecord: 0.7ms | Allocations: 157743)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/meditations" for ::1 at 2021-06-03 19:48:45 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007f955955d0e8 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-33630-1xhom82>, @original_filename="audio", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 204 No Content in 380ms (ActiveRecord: 0.6ms | Allocations: 157726)
+
+
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/meditations" for ::1 at 2021-06-03 19:50:09 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007ff80b650580 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-33673-1eb4ap>, @original_filename="audio", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 204 No Content in 82899ms (ActiveRecord: 1.2ms | Allocations: 195361)
+
+
+Started POST "/meditations" for ::1 at 2021-06-03 19:51:55 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007ff80c030f50 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-33673-6v5nym>, @original_filename="audio", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 204 No Content in 2848ms (ActiveRecord: 0.0ms | Allocations: 2237)
+
+
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/meditations" for ::1 at 2021-06-03 19:52:45 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fcadc5defe0 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-33744-jr8ag7>, @original_filename="audio", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 204 No Content in 50505ms (ActiveRecord: 0.7ms | Allocations: 200519)
+
+
+Started POST "/meditations" for ::1 at 2021-06-03 19:53:50 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fe376ab3838 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-33787-1d56o5u>, @original_filename="audio", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:16:in `create'
+  [1m[36mMeditation Create (2.4ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-03 23:53:50.834363"], ["updated_at", "2021-06-03 23:53:50.834363"]]
+  ↳ app/controllers/meditations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "xi4c7tfqvp4bith5qzblymwxuyu9"], ["filename", "audio"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 15905], ["checksum", "q22L3AY6CgQDevYfnCAhqw=="], ["created_at", "2021-06-03 23:53:51.201766"]]
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 2], ["blob_id", 1], ["created_at", "2021-06-03 23:53:51.207291"]]
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-03 23:53:51.208251"], ["id", 2]]
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+[36m  S3 Storage (695.5ms) [0m[32mUploaded file to key: xi4c7tfqvp4bith5qzblymwxuyu9 (checksum: q22L3AY6CgQDevYfnCAhqw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6da29356-de61-45ee-820e-5bb665e9c1b3) to Async(default) with arguments: #<GlobalID:0x00007fe362025fb0 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+Completed 204 No Content in 1120ms (ActiveRecord: 6.4ms | Allocations: 190396)
+
+
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3] Performing ActiveStorage::AnalyzeJob (Job ID: 6da29356-de61-45ee-820e-5bb665e9c1b3) from Async(default) enqueued at 2021-06-03T23:53:51Z with arguments: #<GlobalID:0x00007fe337312ed8 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3] [36m  S3 Storage (339.6ms) [0m[34mDownloaded file from key: xi4c7tfqvp4bith5qzblymwxuyu9[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3]   [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6da29356-de61-45ee-820e-5bb665e9c1b3] Performed ActiveStorage::AnalyzeJob (Job ID: 6da29356-de61-45ee-820e-5bb665e9c1b3) from Async(default) in 384.03ms
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]

@@ -13,10 +13,10 @@ class MeditationsController < ApplicationController
         # byebug
         meditation = Meditation.new()
         # byebug
-        meditation.audio.attach(params[:audio])
-        # if meditation.save
+        if meditation.save
+          meditation.audio.attach(params[:audio])
         #   render json: meditation
-        # end
+        end
       end
     
       def update
