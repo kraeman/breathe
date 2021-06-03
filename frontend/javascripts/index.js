@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   const starty = () => {
-    const mediaRecorder = new MediaRecorder(stream)
     mediaRecorder.start();
     console.log(mediaRecorder.state);
     console.log("recorder started");
@@ -25,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaRecorder.ondataavailable = function(e) {
       chunks.push(e.data);
     }
-    handleStop()
+    handleStop(chunks)
   }
   
-  const handleStop = () => {
+  const handleStop = (chunks) => {
     mediaRecorder.onstop = function(e) {
       console.log("recorder stopped");
       
@@ -43,16 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
       audio.setAttribute('controls', '');
       deleteButton.innerHTML = "Delete";
       clipLabel.innerHTML = clipName;
+      const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      chunks = [];
+      const audioURL = window.URL.createObjectURL(blob);
+      audio.src = audioURL;
       
       clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(deleteButton);
       soundClips().appendChild(clipContainer);
       
-      const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-      chunks = [];
-      const audioURL = window.URL.createObjectURL(blob);
-      audio.src = audioURL;
       
       deleteButton.onclick = function(e) {
         let evtTgt = e.target;
@@ -78,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Success callback
         .then(function(stream) {
-         console.log("congrats")
+          console.log("congrats")
+          return mediaRecorder = new MediaRecorder(stream)
           
         })
         
