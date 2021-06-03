@@ -52,13 +52,45 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    submitTextButton().addEventListener("click", onClick)
+    submitTextButton().addEventListener("click", onMeditationSubmitClick)
 })
 
-const onClick = (event) => {
-    if(textBox().value) {
-        const li = document.createElement("li")
-        li.innerHTML = textBox().value
-        listOfMeditations().appendChild(li)
+const onMeditationSubmitClick = (event) => {
+    const data = {
+        text: textBox().value
     }
+
+    fetch("http://localhost:3000/meditations", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(resp => resp.json())
+            // debugger
+            .then(json => {debugger})
 }
+
+    // if(textBox().value) {
+    //     const newMeditation = new Meditation(textBox().value)
+    //     newMeditation.render()
+    // }
+// }
+
+// const handleCreateWrittenMeditation = (event) => {
+//     let formData = {
+//         text: event.target.dataset.text
+//       };
+      
+//       let configObj = {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           "Accept": "application/json"
+//         },
+//         body: JSON.stringify(formData)
+//       };
+      
+//       fetch(`http://localhost:3000/meditations/${event.target.dataset.id}`, configObj); 
+// }

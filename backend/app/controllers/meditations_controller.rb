@@ -41,6 +41,6 @@ class MeditationsController < ApplicationController
       private
 
         def meditation_params
-          params.require(:meditation).permit(:audio)
+          params.require(:meditation).permit(:text)
         end
 end

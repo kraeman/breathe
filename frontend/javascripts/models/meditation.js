@@ -73,3 +73,28 @@
 // }
 
 
+class Meditation {
+   static all = []
+
+   constructor(text) {
+        this.text = text
+        Meditation.all.push(this)
+    }
+
+   render() {
+         const li = document.createElement("li")
+         li.innerHTML = textBox().value
+         listOfMeditations().appendChild(li)
+   }
+   //  static findByName(name) {
+   //      return this.all.find(function(product) { product.name === name})
+   //   }
+ 
+   //   static findById(id) {
+   //       return this.all.find(product => product.id === id)
+   //   }
+ 
+   //   static CreateBy(text) {
+   //       return new Meditation(text)
+   //   }
+}
