@@ -11,5 +11,7 @@ class Meditation {
          li.innerHTML = this.text
          listOfMeditations().appendChild(li)
    }
+
+   
  
 }
