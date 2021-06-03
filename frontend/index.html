@@ -28,21 +28,24 @@
         <li><button id="reset-button">Reset</button></li>
     </ul>
 <br>
-<br>
+<br> -->
 <div id="recorder">
     <canvas id="visualizer" height="60px" width="761"></canvas>
     <button id="record-button">Record</button>
     <button id="stop-record-button">Stop</button>
 </div>
-<br> -->
+<br>
 <label for="text">Write a meditation:</label><br>
   <input type="text" id="text" name="text">
   <button id="submit-meditation-button">Submit</button>
-  <button id="stop-record-button">Stop</button>
 <br>
 <h2 id="meditation-header">Guided Meditations</h2>
 <br>
-<audio controls></audio>
+<article class="clip">
+    <audio controls></audio>
+    
+    <button>Delete</button>
+  </article>
 <!-- <label for="filter">Sort by: </label>
 
 <select name="filter" id="filter">
@@ -64,7 +67,7 @@
     <script src="javascripts/models/meditation.js"></script>
     <script src="javascripts/services/commentApi.js"></script>
     <script src="javascripts/services/meditationApi.js"></script>
-    <script src="javascripts/watch.js"></script>
+    <!-- <script src="javascripts/watch.js"></script> -->
     <script src="javascripts/index.js"></script>
 </body>
 <footer>
