@@ -48,4 +48,4 @@
 //     }
 
 //     startButton.addEventListener("click", (e) => Watch.startTimer())
-  }
+//   }

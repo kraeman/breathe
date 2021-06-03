@@ -26,9 +26,16 @@ class Meditation {
         return this.findByTitle(meditationObj.title) || new meditation(meditationObj)
     }
 
-   //  static render() {
-        
-   //  }
+
+
+   render() {
+      const li = document.createElement("li")
+      submitTextButton.addEventListener("click", (e) => li.innerHTML = textBox.value)
+      listOfMeditations.appendChild(li)
+     
+     }
+
+   
 
     // static renderMeditation(meditation) {
     //     const h4 = document.createElement("h4")
@@ -45,22 +52,31 @@ class Meditation {
     //     return comments
     // }
 
-       getUserMedia() {
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            console.log('getUserMedia supported.');
-            navigator.mediaDevices.getUserMedia (
-               {
-                  audio: true
-               })
-               .then(function(stream) {
-               })         
-               .catch(function(err) {
-                  console.log('The following getUserMedia error occurred: ' + err);
-               }
-            );
-         } else {
-            console.log('getUserMedia not supported on your browser!');
-         }
-       }
+      //  getUserMedia() {
+      //   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      //       console.log('getUserMedia supported.');
+      //       navigator.mediaDevices.getUserMedia (
+      //          {
+      //             audio: true
+      //          })
+      //          .then(function(stream) {
+      //          })         
+      //          .catch(function(err) {
+      //             console.log('The following getUserMedia error occurred: ' + err);
+      //          }
+      //       );
+      //    } else {
+      //       console.log('getUserMedia not supported on your browser!');
+      //    }
+      //  }
          
 }
+
+
+submitTextButton.addEventListener("click", (e) => {
+   
+         const li = document.createElement("li")
+         li.innerHTML = textBox.value
+         listOfMeditations.appendChild(li)
+      
+      })
