@@ -4,7 +4,7 @@ class MeditationApi {
             text: textBox().value
         }
 
-    fetch("http://localhost:3000/meditations", {
+    return fetch("http://localhost:3000/meditations", {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json",
@@ -12,12 +12,10 @@ class MeditationApi {
                       },
                     body: JSON.stringify(data)
                 })
-                .then(function(response) {
-                    return response.json();
-                  })
-                  .then(function(json) {
-                    let med = new Meditation(json)
-                    med.render()
-                  }); 
+                .then(resp => resp.json())
+                .then(json => {
+                let med = new Meditation(json)
+                med.render()
+        })
                 }
 }

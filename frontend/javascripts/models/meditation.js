@@ -1,14 +1,14 @@
 class Meditation {
    static all = []
 
-   constructor(text) {
+   constructor({text}) {
         this.text = text
         Meditation.all.push(this)
     }
 
-   render(json) {
+   render() {
          const li = document.createElement("li")
-         li.innerHTML = json
+         li.innerHTML = this.text
          listOfMeditations().appendChild(li)
    }
  

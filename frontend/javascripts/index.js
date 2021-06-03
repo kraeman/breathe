@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const onMeditationSubmitClick = (event) => {
     if(textBox().value) {
+      
       MeditationApi.postMeditation()
-        
+
   }
 }
