@@ -431,3 +431,10 @@ Started POST "/meditations" for ::1 at 2021-06-03 15:34:45 -0400
 Processing by MeditationsController#create as JSON
   Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
 [31mUnpermitted parameter: :audio[0m
+Completed 500 Internal Server Error in 228054ms (ActiveRecord: 0.3ms | Allocations: 58269)
+
+
+  
+Errno::EIO (Input/output error - read):
+  
+app/controllers/meditations_controller.rb:14:in `create'
