@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     getUserMedia()
     // submitTextButton().addEventListener("click", onMeditationSubmitClick)
-    stopRecordingButton().addEventListener("click", stoppy)
     StartRecordingButton().addEventListener("click", starty)
+    stopRecordingButton().addEventListener("click", stoppy)
   })
   
   const onMeditationSubmitClick = (event) => {
@@ -21,10 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaRecorder.ondataavailable = function(e) {
       chunks.push(e.data);
     }
-    handleStop(chunks)
-  }
-  
-  const handleStop = (chunks) => {
     mediaRecorder.onstop = function(e) {
       console.log("recorder stopped");
       
@@ -57,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+  
+  
   
   
   const stoppy = (event) => {

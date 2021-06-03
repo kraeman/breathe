@@ -438,3 +438,187 @@ Completed 500 Internal Server Error in 228054ms (ActiveRecord: 0.3ms | Allocatio
 Errno::EIO (Input/output error - read):
   
 app/controllers/meditations_controller.rb:14:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:28:28 -0400
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+[31mUnpermitted parameter: :audio[0m
+[31mUnpermitted parameter: :audio[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:16:in `create'
+  [1m[36mMeditation Create (1.4ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-03 22:31:07.755576"], ["updated_at", "2021-06-03 22:31:07.755576"]]
+  ↳ app/controllers/meditations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:16:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 158751ms (ActiveRecord: 4.2ms | Allocations: 76046)
+
+
+  
+SystemStackError (stack level too deep):
+  
+app/controllers/meditations_controller.rb:17:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:31:52 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+Completed 500 Internal Server Error in 3945ms (ActiveRecord: 0.3ms | Allocations: 43655)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/meditations_controller.rb:14:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:33:02 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+Completed 500 Internal Server Error in 12538ms (ActiveRecord: 0.6ms | Allocations: 52178)
+
+
+  
+ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage):
+  
+config/storage.yml:12:in `<main>'
+app/controllers/meditations_controller.rb:15:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:34:03 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.5ms | Allocations: 10891)
+
+
+  
+ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage):
+  
+config/storage.yml:12:in `<main>'
+app/controllers/meditations_controller.rb:15:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:36:05 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms | Allocations: 10891)
+
+
+  
+ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage):
+  
+config/storage.yml:12:in `<main>'
+app/controllers/meditations_controller.rb:15:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:36:27 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+Completed 500 Internal Server Error in 151799ms (ActiveRecord: 0.9ms | Allocations: 128962)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:39:13 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as JSON
+  Parameters: {"audio"=>{}, "meditation"=>{"audio"=>{}}}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms | Allocations: 10900)
+
+
+  
+ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage):
+  
+config/storage.yml:12:in `<main>'
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 18:59:45 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fe390b2a900 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32173-4u25iu>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio_file\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms | Allocations: 9703)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 19:00:45 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fe3d01f25f0 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32173-ftwjca>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 88097ms (ActiveRecord: 0.7ms | Allocations: 41823)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 19:02:28 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007f9bc645e868 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32267-dwmlvw>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms | Allocations: 13624)
+
+
+  
+ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage):
+  
+config/storage.yml:12:in `<main>'
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 19:04:51 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007f9b8780d200 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32267-1rtv70o>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms | Allocations: 5504)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 19:05:11 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007ff2cdefd900 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32333-1llugg5>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.0ms | Allocations: 13620)
+
+
+  
+ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage):
+  
+config/storage.yml:12:in `<main>'
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 19:09:57 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fb765f0d718 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32438-1bhpmj6>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.4ms | Allocations: 17605)
+
+
+  
+KeyError (Missing configuration for the amazon Active Storage service. Configurations available for the test and local services.):
+  
+app/controllers/meditations_controller.rb:16:in `create'
+Started POST "/meditations" for ::1 at 2021-06-03 19:10:37 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fc4812d1408 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210603-32476-p1riia>, @original_filename="blob", @content_type="audio/ogg; codecs=opus", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"blob\"\r\nContent-Type: audio/ogg; codecs=opus\r\n">}
+Completed 204 No Content in 1230ms (ActiveRecord: 0.7ms | Allocations: 311175)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Load (0.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
