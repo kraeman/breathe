@@ -1,39 +1,39 @@
-class Meditation {
-    static all = []
+// class Meditation {
+//     static all = []
 
-    constructor({audio, title, author, text, id}){
-        this.audio = audio
-        this.title = title
-        this.author = author
-        this.text = text
-        this.id = id
-        Meditation.all.push(this)
-    }
+//     constructor({audio, title, author, text, id}){
+//         this.audio = audio
+//         this.title = title
+//         this.author = author
+//         this.text = text
+//         this.id = id
+//         Meditation.all.push(this)
+//     }
 
-    static getAll() {
-        return this.all
-    }
+//     static getAll() {
+//         return this.all
+//     }
 
-    static findByTitle(title) {
-       return this.all.find(function(meditation) { meditation.title === title})
-    }
+//     static findByTitle(title) {
+//        return this.all.find(function(meditation) { meditation.title === title})
+//     }
 
-    static findById(id) {
-        return this.all.find(meditation => meditation.id === id)
-    }
+//     static findById(id) {
+//         return this.all.find(meditation => meditation.id === id)
+//     }
 
-    static findOrCreateBy(meditationObj) {
-        return this.findByTitle(meditationObj.title) || new meditation(meditationObj)
-    }
+//     static findOrCreateBy(meditationObj) {
+//         return this.findByTitle(meditationObj.title) || new meditation(meditationObj)
+//     }
 
 
 
-   render() {
-      const li = document.createElement("li")
-      submitTextButton.addEventListener("click", (e) => li.innerHTML = textBox.value)
-      listOfMeditations.appendChild(li)
+//    render() {
+//       const li = document.createElement("li")
+//       submitTextButton.addEventListener("click", (e) => li.innerHTML = textBox.value)
+//       listOfMeditations.appendChild(li)
      
-     }
+//      }
 
    
 
@@ -70,13 +70,18 @@ class Meditation {
       //    }
       //  }
          
-}
+// }
 
 
-submitTextButton.addEventListener("click", (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+   console.log("Hello")
+   submitTextButton.addEventListener("click", (e) => {
    
-         const li = document.createElement("li")
-         li.innerHTML = textBox.value
-         listOfMeditations.appendChild(li)
-      
-      })
+      const li = document.createElement("li")
+      li.innerHTML = textBox.value
+      listOfMeditations.appendChild(li)
+      debugger
+   
+   })
+})
+
