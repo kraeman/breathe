@@ -10,12 +10,9 @@ class MeditationsController < ApplicationController
       end
     
       def create
-        byebug
         meditation = Meditation.new(meditation_params)
         if meditation.save
           render json: meditation
-        else
-          #errors
         end
       end
     
@@ -23,8 +20,7 @@ class MeditationsController < ApplicationController
         meditation = Meditation.find(meditation_params[:id])
         if meditation.update(meditation_params)
           render json: meditation
-        else
-          #errors
+        end
       end
     
       def destroy
