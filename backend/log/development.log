@@ -133,3 +133,41 @@ SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/cont
   
 app/controllers/meditations_controller.rb:46: syntax error, unexpected end-of-input, expecting end
 app/controllers/meditations_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+Started POST "/meditations" for ::1 at 2021-06-03 09:45:08 -0400
+  
+SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/controllers/meditations_controller.rb:46: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/meditations_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+app/controllers/meditations_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+Started POST "/meditations" for ::1 at 2021-06-03 09:46:03 -0400
+  
+SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started POST "/meditations" for ::1 at 2021-06-03 09:49:20 -0400
+  
+SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started POST "/meditations" for ::1 at 2021-06-03 09:53:46 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started POST "/meditations" for ::1 at 2021-06-03 09:55:36 -0400
+  
+SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started POST "/meditations" for ::1 at 2021-06-03 09:56:42 -0400
+  
+SyntaxError (/Users/kraewind/Documents/Flatiron/Phase 4/breathe/backend/app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/meditations_controller.rb:47: syntax error, unexpected end-of-input, expecting end

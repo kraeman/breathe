@@ -10,6 +10,7 @@ class MeditationsController < ApplicationController
       end
     
       def create
+        byebug
         meditation = Meditation.new(meditation_params)
         if meditation.save
           render json: meditation
