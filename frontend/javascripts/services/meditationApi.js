@@ -1,15 +1,5 @@
 class MeditationApi {
     static persistAudio(blob) {
-        // const data = {
-        //     audio: blob
-        // }
-
-
-        // const data = new FormData();
-        // data.append(
-        //     "audio",
-        //     blob
-        // );
 
         const data = new File([blob], "audio")
         const formData = new FormData()
@@ -31,7 +21,7 @@ class MeditationApi {
         }
 
 
-    return fetch("http://localhost:3000/meditations", {
+    fetch("http://localhost:3000/meditations", {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json",

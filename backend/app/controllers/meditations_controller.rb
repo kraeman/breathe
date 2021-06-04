@@ -10,7 +10,7 @@ class MeditationsController < ApplicationController
       end
     
       def create
-        # byebug
+        byebug
         meditation = Meditation.new()
         # byebug
         if meditation.save
