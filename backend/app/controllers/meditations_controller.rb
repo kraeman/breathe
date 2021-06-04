@@ -1,6 +1,7 @@
 class MeditationsController < ApplicationController
       def index
-        meditations = Meditation.includes(:comments)
+        meditations = Meditation.all
+        byebug
         render json: meditations
       end
     
@@ -10,7 +11,7 @@ class MeditationsController < ApplicationController
       end
     
       def create
-        byebug
+        # byebug
         meditation = Meditation.new()
         # byebug
         if meditation.save
