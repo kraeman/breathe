@@ -4,7 +4,7 @@ class MeditationApi {
         const data = new File([blob], "audio")
         const formData = new FormData()
         formData.append("audio", data)
-
+        debugger
     return fetch("http://localhost:3000/meditations", {
                     method: 'POST',
                     body: formData
@@ -15,6 +15,24 @@ class MeditationApi {
             
         // })
         }
+
+
+    
+    static grabMeditations() {
+                fetch("http://localhost:3000/meditations")
+                .then(resp => resp.json())
+                .then(json => {
+                    json["data"].forEach(medObj => {
+                        new Meditation(medObj)
+                    })
+                    Meditation.appendAllToPage()
+                }
+            )
+        }       
+
+
+
+
     static postMeditation() {
         const data = {
             text: textBox().value

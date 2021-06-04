@@ -1,5 +1,5 @@
 class MeditationSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :title, :author, :audio, :created_at, :comment
-  has_many :comments
+  include JSONAPI::Serializer
+  attributes :title, :author, :audio
+  
 end

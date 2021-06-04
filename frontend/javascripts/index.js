@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    MeditationApi.grabMeditations()
+    // Meditation.appendAllToPage()
     getUserMedia()
     // submitTextButton().addEventListener("click", onMeditationSubmitClick)
     StartRecordingButton().addEventListener("click", starty)
@@ -35,7 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
       audio.setAttribute('controls', '');
       deleteButton.innerHTML = "Delete";
       clipLabel.innerHTML = clipName;
+      
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      debugger
       MeditationApi.persistAudio(blob)
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);

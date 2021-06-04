@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'aws-sdk-s3', require: false
 
 gem 'fast_jsonapi'
+gem 'jsonapi-serializer'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
