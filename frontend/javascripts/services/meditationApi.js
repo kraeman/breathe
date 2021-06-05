@@ -16,13 +16,20 @@ class MeditationApi {
         // })
         }
 
+    static deleteMeditation(i) {
+        debugger
+        linkus = i.querySelector("audio").getAttribute('src')
+        
+        // fetch()
+    }
 
     
     static grabMeditations() {
                 fetch("http://localhost:3000/meditations")
                 .then(resp => resp.json())
                 .then(json => {
-                        Meditation.appendAllToPage(json["audio"])
+                    debugger
+                        Meditation.appendAllToPage(json["audio_array"])
                 }
             )
         }       

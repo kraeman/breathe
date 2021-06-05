@@ -1,10 +1,14 @@
 class MeditationsController < ApplicationController
       def index
-        meditation = Meditation.first
-        r = meditation.audio
-        audio = Rails.application.routes.url_helpers.rails_blob_url(r, only_path: true)
+        meditations = Meditation.all
+        array = []
+        meditations.each do |med|
+          r = med.audio
+          audio = Rails.application.routes.url_helpers.rails_blob_url(r, only_path: true)
+          array << audio
+        end
         byebug
-        render json: {message: "Attached to File", audio: audio}
+        render json: {message: "Attached to File", audio_array: array}
 
       end
     

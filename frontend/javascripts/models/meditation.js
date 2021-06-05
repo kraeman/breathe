@@ -20,8 +20,8 @@ class Meditation {
   }
 
   static appendAllToPage(audi) {
-
-
+    audi.forEach(aud => {
+        debugger
           const clipContainer = document.createElement('article');
           const clipLabel = document.createElement('p');
           const audio = document.createElement('audio');
@@ -30,14 +30,22 @@ class Meditation {
 
           // clipContainer.classList.add('clip')
           audio.setAttribute('controls', '');
-          audio.src = "http://localhost:3000" + audi
+          audio.src = "http://localhost:3000" + aud
           debugger
-          // deleteButton.innerHTML = "Delete";
+          deleteButton.innerHTML = "Delete";
 
           clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(deleteButton);
       soundClips().appendChild(clipContainer);
+      deleteButton.onclick = function(e) {
+        debugger
+        let evtTgt = e.target;
+        let thing = evtTgt.parentNode
+        MeditationApi.deleteMeditation(thing)
+        evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+      }
+    })
           // clipLabel.innerHTML = clipName;
 
 

@@ -52,7 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
       
       
       deleteButton.onclick = function(e) {
+        debugger
         let evtTgt = e.target;
+        let thing = evtTgt.parentNode.querySelector("audio").getAttribute('src')
+        MeditationApi.deleteMeditation(thing)
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
       }
     }
