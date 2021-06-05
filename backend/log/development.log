@@ -2515,3 +2515,1283 @@ Completed 204 No Content in 9765ms (ActiveRecord: 5.0ms | Allocations: 52401)
 
   [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/meditations" for ::1 at 2021-06-05 07:56:24 -0400
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fb3bbbb8750 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-5438-1rai7n4>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.5ms | Allocations: 9799)
+
+
+  
+NoMethodError (undefined method `first' for #<ActiveStorage::Attached::Changes::DeleteOne:0x00007fb3bb410b38>):
+  
+app/controllers/meditations_controller.rb:19:in `create'
+Started POST "/meditations" for ::1 at 2021-06-05 07:57:11 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fb3bb779ae0 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-5438-f1vtao>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 143895ms (ActiveRecord: 1.1ms | Allocations: 379006)
+
+
+  
+NoMethodError (undefined method `first' for #<ActiveStorage::Attached::Changes::DeleteOne:0x00007fb3bb7eb6b8>):
+  
+app/controllers/meditations_controller.rb:20:in `create'
+Started POST "/meditations" for ::1 at 2021-06-05 07:59:46 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fb3bb58c750 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-5438-1u2hofc>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+Completed 204 No Content in 44225ms (ActiveRecord: 1.4ms | Allocations: 162979)
+
+
+Started POST "/meditations" for ::1 at 2021-06-05 08:00:58 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fb3bbef9360 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-5438-17n3ila>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mMeditation Create (1.5ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-05 12:00:58.603216"], ["updated_at", "2021-06-05 12:00:58.603216"]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "2x6yjkc1r5fmy5ikw76e8bl0ijwv"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 8757], ["checksum", "BWKTYm9NOMDVLgAhPK9YnA=="], ["created_at", "2021-06-05 12:00:58.675288"]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 5], ["blob_id", 4], ["created_at", "2021-06-05 12:00:58.679773"]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mMeditation Update (0.3ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-05 12:00:58.681220"], ["id", 5]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+[36m  S3 Storage (710.4ms) [0m[32mUploaded file to key: 2x6yjkc1r5fmy5ikw76e8bl0ijwv (checksum: BWKTYm9NOMDVLgAhPK9YnA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 87c72d4f-2c2f-45d0-9f2a-23740c0b8f79) to Async(default) with arguments: #<GlobalID:0x00007fb36cbf20d0 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/4>>
+Completed 204 No Content in 832ms (ActiveRecord: 5.5ms | Allocations: 45484)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79] Performing ActiveStorage::AnalyzeJob (Job ID: 87c72d4f-2c2f-45d0-9f2a-23740c0b8f79) from Async(default) enqueued at 2021-06-05T12:00:59Z with arguments: #<GlobalID:0x00007fb36cdca128 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79] [36m  S3 Storage (303.8ms) [0m[34mDownloaded file from key: 2x6yjkc1r5fmy5ikw76e8bl0ijwv[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79]   [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87c72d4f-2c2f-45d0-9f2a-23740c0b8f79] Performed ActiveStorage::AnalyzeJob (Job ID: 87c72d4f-2c2f-45d0-9f2a-23740c0b8f79) from Async(default) in 344.75ms
+Started GET "/favicon.ico" for ::1 at 2021-06-05 09:41:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (1.4ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+Started POST "/meditations" for ::1 at 2021-06-05 09:42:58 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fe3b41c0b48 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-6504-1mft9yb>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mMeditation Create (0.5ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-05 13:42:58.851557"], ["updated_at", "2021-06-05 13:42:58.851557"]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "sj7ix2n0tpytttl0n24pv99vv1ob"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 27996], ["checksum", "VC66TDpuemk8ePTbV22AeA=="], ["created_at", "2021-06-05 13:42:58.874700"]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 1], ["blob_id", 5], ["created_at", "2021-06-05 13:42:58.878611"]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-05 13:42:58.879347"], ["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+[36m  S3 Storage (944.6ms) [0m[32mUploaded file to key: sj7ix2n0tpytttl0n24pv99vv1ob (checksum: VC66TDpuemk8ePTbV22AeA==)[0m
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:19:in `create'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e) to Async(default) with arguments: #<GlobalID:0x00007fe3b433e948 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 86942ed4-689a-4115-ae09-7ef3e39f0760) to Async(default) with arguments: #<GlobalID:0x00007fe392fb4a50 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/5>>
+Completed 204 No Content in 1385ms (ActiveRecord: 3.6ms | Allocations: 189835)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e] Performing ActiveStorage::PurgeJob (Job ID: bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e) from Async(default) enqueued at 2021-06-05T13:42:59Z with arguments: #<GlobalID:0x00007fe381869d60 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e]   [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760] Performing ActiveStorage::AnalyzeJob (Job ID: 86942ed4-689a-4115-ae09-7ef3e39f0760) from Async(default) enqueued at 2021-06-05T13:42:59Z with arguments: #<GlobalID:0x00007fe3b43a2ec0 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e]   [1m[36mActiveStorage::Blob Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e]   [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760] [36m  S3 Storage (384.1ms) [0m[34mDownloaded file from key: sj7ix2n0tpytttl0n24pv99vv1ob[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e] [36m  S3 Storage (384.4ms) [0m[31mDeleted file from key: fsw12ugi3o7zt2b3qvle4az09hhw[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e] Performed ActiveStorage::PurgeJob (Job ID: bf4b1d5d-fabb-4de6-9678-0cf3aa038d3e) from Async(default) in 415.69ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [86942ed4-689a-4115-ae09-7ef3e39f0760] Performed ActiveStorage::AnalyzeJob (Job ID: 86942ed4-689a-4115-ae09-7ef3e39f0760) from Async(default) in 429.11ms
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/meditations" for ::1 at 2021-06-05 09:44:23 -0400
+Processing by MeditationsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 17491ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 59877)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 09:44:52 -0400
+Processing by MeditationsController#index as HTML
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 2389ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 6430)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 09:52:14 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  S3 Storage (1.2ms) [0m[34mGenerated URL for file at key: sj7ix2n0tpytttl0n24pv99vv1ob (https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T135214Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bcb41c5a624b3b8f4f31358b49d1ec05db792311d89cec3721624e2ab34ce4bd)[0m
+Redirected to https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T135214Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bcb41c5a624b3b8f4f31358b49d1ec05db792311d89cec3721624e2ab34ce4bd
+Completed 302 Found in 37ms (ActiveRecord: 0.5ms | Allocations: 13954)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 09:57:18 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as HTML
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 1.1ms | Allocations: 171416)
+
+
+  
+NameError (undefined local variable or method `url' for #<MeditationsController:0x007fa36c470628>
+Did you mean?  URI):
+  
+app/controllers/meditations_controller.rb:7:in `index'
+Started GET "/meditations" for ::1 at 2021-06-05 09:57:46 -0400
+Processing by MeditationsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 22666)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 09:59:33 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 371ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 170146)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 09:59:41 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 2130)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:13:40 -0400
+Processing by MeditationsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2673)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:19:37 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  S3 Storage (9.6ms) [0m[34mGenerated URL for file at key: sj7ix2n0tpytttl0n24pv99vv1ob (https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T141937Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ede9049695ae1fbe7e02c36f3a864439a592062519ffc86e1c473588123234c9)[0m
+Redirected to https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T141937Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ede9049695ae1fbe7e02c36f3a864439a592062519ffc86e1c473588123234c9
+Completed 302 Found in 30ms (ActiveRecord: 0.6ms | Allocations: 6176)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:20:15 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  S3 Storage (2.2ms) [0m[34mGenerated URL for file at key: sj7ix2n0tpytttl0n24pv99vv1ob (https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T142015Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=053086839596e33126957d15bd5121b58865907a9c4d9982a688d6299272dce7)[0m
+Redirected to https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T142015Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=053086839596e33126957d15bd5121b58865907a9c4d9982a688d6299272dce7
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 1748)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:34:41 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  S3 Storage (6.1ms) [0m[34mGenerated URL for file at key: sj7ix2n0tpytttl0n24pv99vv1ob (https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T143442Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c0d9f52a1058100d28639b29505893ee4cac63677b77c5fec721450050183a4b)[0m
+Redirected to https://kraesawsmeditationbucket.s3.us-west-2.amazonaws.com/sj7ix2n0tpytttl0n24pv99vv1ob?response-content-disposition=attachment%3B%20filename%3D%22audiozzz%22%3B%20filename%2A%3DUTF-8%27%27audiozzz&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYWOBY75XLZQCVTF2%2F20210605%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210605T143442Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c0d9f52a1058100d28639b29505893ee4cac63677b77c5fec721450050183a4b
+Completed 302 Found in 358ms (ActiveRecord: 0.4ms | Allocations: 159411)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (1.7ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMeditations (20210526212538)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "audio" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210526212538"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20210526213314)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210526213314"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMeditationIdToComments (20210527140228)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "meditation_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210527140228"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAuthorAndTitleToMeditations (20210527181207)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "meditations" ADD "title" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "meditations" ADD "author" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210527181207"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActiveStorageTables (20210527191906)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210527191906"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTextToMeditation (20210603013142)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "meditations" ADD "text" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210603013142"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveAudioColumnFromMeditations (20210604195952)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameditations" ("id" integer NOT NULL PRIMARY KEY, "audio" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "title" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "text" text DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ameditations" ("id","audio","created_at","updated_at","title","author","text")
+                     SELECT "id","audio","created_at","updated_at","title","author","text" FROM "meditations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "meditations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "title" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "text" text DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "meditations" ("id","created_at","updated_at","title","author","text")
+                     SELECT "id","created_at","updated_at","title","author","text" FROM "ameditations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ameditations"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210604195952"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAudioToMeditations (20210604233627)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "meditations" ADD "audio" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210604233627"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-05 14:37:37.193253"], ["updated_at", "2021-06-05 14:37:37.193253"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/meditations" for ::1 at 2021-06-05 10:37:54 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fba20301100 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-7407-rkq3gz>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Create (0.6ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-05 14:37:54.575357"], ["updated_at", "2021-06-05 14:37:54.575357"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "mug9an197aw0n1j1fzqub1769nrb"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 13035], ["checksum", "tST3WPuYVG5/HMiCmSobPw=="], ["created_at", "2021-06-05 14:37:54.598601"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-06-05 14:37:54.602573"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-05 14:37:54.603446"], ["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+[36m  Disk Storage (4.6ms) [0m[32mUploaded file to key: mug9an197aw0n1j1fzqub1769nrb (checksum: tST3WPuYVG5/HMiCmSobPw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 39313c20-c546-4e67-96df-691a67699c76) to Async(default) with arguments: #<GlobalID:0x00007fba37b987e8 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+Completed 204 No Content in 82ms (ActiveRecord: 3.2ms | Allocations: 36277)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76] Performing ActiveStorage::AnalyzeJob (Job ID: 39313c20-c546-4e67-96df-691a67699c76) from Async(default) enqueued at 2021-06-05T14:37:54Z with arguments: #<GlobalID:0x00007fba52140460 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: mug9an197aw0n1j1fzqub1769nrb[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39313c20-c546-4e67-96df-691a67699c76] Performed ActiveStorage::AnalyzeJob (Job ID: 39313c20-c546-4e67-96df-691a67699c76) from Async(default) in 32.39ms
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:40:08 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 27ms (ActiveRecord: 0.5ms | Allocations: 8781)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (1.5ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:41:01 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 25ms (ActiveRecord: 0.4ms | Allocations: 8781)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/meditations" for ::1 at 2021-06-05 10:41:19 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007ff54f8320d8 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-7527-o867vd>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Create (0.9ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-05 14:41:19.194676"], ["updated_at", "2021-06-05 14:41:19.194676"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "j4omfmbm74r0tplngtcqs7xxohbp"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 19077], ["checksum", "pJh79ZH76pq/WhGVhMO5LQ=="], ["created_at", "2021-06-05 14:41:19.228739"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 1], ["blob_id", 2], ["created_at", "2021-06-05 14:41:19.233897"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-05 14:41:19.234951"], ["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+[36m  Disk Storage (4.8ms) [0m[32mUploaded file to key: j4omfmbm74r0tplngtcqs7xxohbp (checksum: pJh79ZH76pq/WhGVhMO5LQ==)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: a9b9c756-bcdf-4fee-8a1c-c38529c4fc98) to Async(default) with arguments: #<GlobalID:0x00007ff54f46fab8 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: f0f02675-8eba-404d-98a7-6be1397753b9) to Async(default) with arguments: #<GlobalID:0x00007ff54f4761b0 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/2>>
+Completed 204 No Content in 78ms (ActiveRecord: 4.1ms | Allocations: 27266)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98] Performing ActiveStorage::PurgeJob (Job ID: a9b9c756-bcdf-4fee-8a1c-c38529c4fc98) from Async(default) enqueued at 2021-06-05T14:41:19Z with arguments: #<GlobalID:0x00007ff54f494cf0 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9] Performing ActiveStorage::AnalyzeJob (Job ID: f0f02675-8eba-404d-98a7-6be1397753b9) from Async(default) enqueued at 2021-06-05T14:41:19Z with arguments: #<GlobalID:0x00007ff5785360b8 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9] [36m  Disk Storage (2.7ms) [0m[34mDownloaded file from key: j4omfmbm74r0tplngtcqs7xxohbp[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98]   [1m[36mActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98] [36m  Disk Storage (0.2ms) [0m[31mDeleted file from key: mug9an197aw0n1j1fzqub1769nrb[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a9b9c756-bcdf-4fee-8a1c-c38529c4fc98] Performed ActiveStorage::PurgeJob (Job ID: a9b9c756-bcdf-4fee-8a1c-c38529c4fc98) from Async(default) in 24.51ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f0f02675-8eba-404d-98a7-6be1397753b9] Performed ActiveStorage::AnalyzeJob (Job ID: f0f02675-8eba-404d-98a7-6be1397753b9) from Async(default) in 28.32ms
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:41:24 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 872)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:41:36 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 856)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:43:03 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.5ms | Allocations: 6455)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:43:07 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 857)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96/audiozzz" for ::1 at 2021-06-05 10:43:28 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85d888c137232cab787baa12f7b5f2dd5d98bf96", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 25ms (ActiveRecord: 0.4ms | Allocations: 8781)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=5):
+  
+activerecord (6.1.3.2) lib/active_record/core.rb:338:in `find'
+activerecord (6.1.3.2) lib/active_record/signed_id.rb:64:in `find_signed!'
+activestorage (6.1.3.2) app/models/active_storage/blob.rb:86:in `find_signed!'
+activestorage (6.1.3.2) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.3.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.2) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.2) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.2) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.2) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/meditations" for ::1 at 2021-06-05 10:44:35 -0400
+Processing by MeditationsController#index as HTML
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 2970ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 55846)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da2a06946688bde26360f5c8732e948b37d45718/audiozzz" for ::1 at 2021-06-05 10:44:58 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da2a06946688bde26360f5c8732e948b37d45718", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (18.4ms) [0m[34mGenerated URL for file at key: j4omfmbm74r0tplngtcqs7xxohbp (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz
+Completed 302 Found in 23ms (ActiveRecord: 0.4ms | Allocations: 3823)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz" for ::1 at 2021-06-05 10:44:58 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 203)
+
+
+Started POST "/meditations" for ::1 at 2021-06-05 10:45:20 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007fa4fc065948 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-7593-9ddtq0>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Create (1.0ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-05 14:45:20.497121"], ["updated_at", "2021-06-05 14:45:20.497121"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "yexai5zxhgth1t9jbv6p6ya8munv"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 20456], ["checksum", "qzq06KT2CalSbOCvGhaQvQ=="], ["created_at", "2021-06-05 14:45:20.511781"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 2], ["blob_id", 3], ["created_at", "2021-06-05 14:45:20.516515"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-05 14:45:20.517946"], ["id", 2]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+[36m  Disk Storage (5.1ms) [0m[32mUploaded file to key: yexai5zxhgth1t9jbv6p6ya8munv (checksum: qzq06KT2CalSbOCvGhaQvQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4791829d-484b-4f84-b6c6-50a04a356d36) to Async(default) with arguments: #<GlobalID:0x00007fa4f93668c0 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/3>>
+Completed 204 No Content in 57ms (ActiveRecord: 2.9ms | Allocations: 9464)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36] Performing ActiveStorage::AnalyzeJob (Job ID: 4791829d-484b-4f84-b6c6-50a04a356d36) from Async(default) enqueued at 2021-06-05T14:45:20Z with arguments: #<GlobalID:0x00007fa4f93eec48 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: yexai5zxhgth1t9jbv6p6ya8munv[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4791829d-484b-4f84-b6c6-50a04a356d36] Performed ActiveStorage::AnalyzeJob (Job ID: 4791829d-484b-4f84-b6c6-50a04a356d36) from Async(default) in 19.31ms
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz" for ::1 at 2021-06-05 10:45:23 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 164)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz" for ::1 at 2021-06-05 10:45:54 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 163)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz" for ::1 at 2021-06-05 10:47:32 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhalJ2YldadFltMDNOSEl3ZEhCc2JtZDBZM0Z6TjNoNGIyaGljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNDo0OTo1OC4zNTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6155fc9868015fdc01057b69433e75864e048543/audiozzz" for ::1 at 2021-06-05 10:48:26 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/rails/active_storage/disk/ey%E2%80%A66155fc9868015fdc01057b69433e75864e048543/audiozzz" for ::1 at 2021-06-05 10:49:37 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 114)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:53:35 -0400
+Processing by MeditationsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 9050ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 7040)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:53:44 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 948ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 6392)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:53:55 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 4637ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 6444)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:54:09 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 8085ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 6479)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:54:17 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 1912ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 6736)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:54:25 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 2885ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 65046)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 10:57:51 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 2724ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 6490)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 11:00:26 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 5605ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 6450)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (1.5ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+Started GET "/meditations" for ::1 at 2021-06-05 11:01:25 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 5685)
+
+
+  
+NoMethodError (undefined method `audio' for nil:NilClass):
+  
+app/controllers/meditations_controller.rb:4:in `index'
+Started POST "/meditations" for ::1 at 2021-06-05 11:01:44 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa87034a38 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210605-8039-bezlfi>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Create (0.9ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-05 15:01:44.485905"], ["updated_at", "2021-06-05 15:01:44.485905"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "kt6ng6deojwjbvtyi49tym8d8re3"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 23306], ["checksum", "r4xWtoGHJhFevv93qNr2/Q=="], ["created_at", "2021-06-05 15:01:44.516777"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 1], ["blob_id", 4], ["created_at", "2021-06-05 15:01:44.520411"]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-05 15:01:44.521228"], ["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+[36m  Disk Storage (5.7ms) [0m[32mUploaded file to key: kt6ng6deojwjbvtyi49tym8d8re3 (checksum: r4xWtoGHJhFevv93qNr2/Q==)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:20:in `create'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8cb83686-350e-45a9-8d46-eff57859b129) to Async(default) with arguments: #<GlobalID:0x00007ffa85e8e770 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/2>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1d2937ed-2ced-4363-bfe9-2250d51bbc2d) to Async(default) with arguments: #<GlobalID:0x00007ffaa6b10e60 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/4>>
+Completed 204 No Content in 95ms (ActiveRecord: 4.8ms | Allocations: 32180)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129] Performing ActiveStorage::PurgeJob (Job ID: 8cb83686-350e-45a9-8d46-eff57859b129) from Async(default) enqueued at 2021-06-05T15:01:44Z with arguments: #<GlobalID:0x00007ffaa6b31a48 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d] Performing ActiveStorage::AnalyzeJob (Job ID: 1d2937ed-2ced-4363-bfe9-2250d51bbc2d) from Async(default) enqueued at 2021-06-05T15:01:44Z with arguments: #<GlobalID:0x00007ffaa6196f60 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129]   [1m[36mActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d] [36m  Disk Storage (17.9ms) [0m[34mDownloaded file from key: kt6ng6deojwjbvtyi49tym8d8re3[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: j4omfmbm74r0tplngtcqs7xxohbp[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cb83686-350e-45a9-8d46-eff57859b129] Performed ActiveStorage::PurgeJob (Job ID: 8cb83686-350e-45a9-8d46-eff57859b129) from Async(default) in 29.5ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1d2937ed-2ced-4363-bfe9-2250d51bbc2d] Performed ActiveStorage::AnalyzeJob (Job ID: 1d2937ed-2ced-4363-bfe9-2250d51bbc2d) from Async(default) in 46.25ms
+Started GET "/meditations" for ::1 at 2021-06-05 11:01:49 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 5871ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 39891)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 11:03:23 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 6416)
+
+
+Started GET "/meditations" for ::1 at 2021-06-05 11:04:36 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" ORDER BY "meditations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:5:in `index'
+Completed 200 OK in 2961ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 6445)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78d62968c97b711c1ed91f95711b84b0db43448b/audiozzz" for ::1 at 2021-06-05 11:04:42 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78d62968c97b711c1ed91f95711b84b0db43448b", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: kt6ng6deojwjbvtyi49tym8d8re3 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhM1EyYm1jMlpHVnZhbmRxWW5aMGVXazBPWFI1YlRoa09ISmxNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNTowOTo0Mi45NDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--231dab3ddc15e197e4b42dd1e54b3e56d758d25f/audiozzz)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhM1EyYm1jMlpHVnZhbmRxWW5aMGVXazBPWFI1YlRoa09ISmxNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNTowOTo0Mi45NDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--231dab3ddc15e197e4b42dd1e54b3e56d758d25f/audiozzz
+Completed 302 Found in 12ms (ActiveRecord: 0.1ms | Allocations: 2282)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhM1EyYm1jMlpHVnZhbmRxWW5aMGVXazBPWFI1YlRoa09ISmxNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wNVQxNTowOTo0Mi45NDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--231dab3ddc15e197e4b42dd1e54b3e56d758d25f/audiozzz" for ::1 at 2021-06-05 11:04:42 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 221)
+
+

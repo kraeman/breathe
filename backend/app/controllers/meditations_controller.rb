@@ -1,9 +1,10 @@
 class MeditationsController < ApplicationController
       def index
         meditation = Meditation.first
-        audit = meditation.audio
+        r = meditation.audio
+        audio = Rails.application.routes.url_helpers.rails_blob_url(r, only_path: true)
         byebug
-        render json: audit
+        render json: {message: "Attached to File", audio: audio}
 
       end
     
@@ -15,9 +16,11 @@ class MeditationsController < ApplicationController
       def create
         # byebug
         meditation = Meditation.new()
-        meditation.audio.attach(params["audio"])
-        byebug
+        meditation.audio.attach(params["audiozzzzzzz"])
         meditation.save
+        # byebug
+        # url = Rails.application.routes.url_helpers.rails_blob_url(r.first, only_path: true)
+        # render json: {message: "Attached to File", url: url}
       end
     
       def update

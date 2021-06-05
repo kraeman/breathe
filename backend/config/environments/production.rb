@@ -88,7 +88,7 @@ Rails.application.configure do
   end
 
 
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
   config.require_master_key = true  
 
   # Do not dump schema after migrations.
