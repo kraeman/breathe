@@ -1,10 +1,10 @@
 class MeditationApi {
     static persistAudio(blob) {
 
-        const data = new File([blob], "audio")
+        const data = new File([blob], "audiozzz")
         const formData = new FormData()
         formData.append("audio", data)
-        debugger
+        
     return fetch("http://localhost:3000/meditations", {
                     method: 'POST',
                     body: formData

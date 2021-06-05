@@ -1,7 +1,9 @@
 class MeditationsController < ApplicationController
       def index
-        meditations = Meditation.all
-        render json: MeditationSerializer.new(meditations)
+        meditation = Meditation.first
+        audit = meditation.audio
+        byebug
+        render json: audit
 
       end
     
@@ -13,8 +15,8 @@ class MeditationsController < ApplicationController
       def create
         # byebug
         meditation = Meditation.new()
+        meditation.audio.attach(params["audio"])
         byebug
-        meditation.audio.attach(params[:audio])
         meditation.save
       end
     
