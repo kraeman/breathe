@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const clipLabel = document.createElement('p');
       const audio = document.createElement('audio');
       const deleteButton = document.createElement('button');
+      const commentDiv = document.createElement('div')
+      const ul = document.createElement('ul')
       
       clipContainer.classList.add('clip');
       audio.setAttribute('controls', '');
@@ -39,20 +41,27 @@ document.addEventListener("DOMContentLoaded", () => {
       clipLabel.innerHTML = clipName;
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-      debugger
+      
       MeditationApi.persistAudio(blob)
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
       
+      
+      commentDiv.appendChild(ul)
+
+
+
       clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(deleteButton);
+      clipContainer.appendChild(commentDiv)
       soundClips().appendChild(clipContainer);
-      
+
+      debugger
       
       deleteButton.onclick = function(e) {
-        debugger
+        
         let evtTgt = e.target;
         let thing = evtTgt.parentNode.querySelector("audio").getAttribute('src')
         MeditationApi.deleteMeditation(thing)

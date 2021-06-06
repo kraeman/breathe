@@ -9,9 +9,9 @@ class Meditation {
     }
 
    render() {
-         const li = document.createElement("li")
-         li.innerHTML = this.text
-         listOfMeditations().appendChild(li)
+        //  const li = document.createElement("li")
+        //  li.innerHTML = this.text
+        //  listOfMeditations().appendChild(li)
    }
 
    
