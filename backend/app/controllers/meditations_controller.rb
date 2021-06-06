@@ -2,13 +2,15 @@ class MeditationsController < ApplicationController
       def index
         meditations = Meditation.all
         array = []
+        innerHash = {}
         meditations.each do |med|
+          id = med.id
           r = med.audio
           audio = Rails.application.routes.url_helpers.rails_blob_url(r, only_path: true)
-          array << audio
+          innerHash[id] = audio
         end
-        byebug
-        render json: {message: "Attached to File", audio_array: array}
+        # byebug
+        render json: {message: "Attached to File", med_hash: innerHash}
 
       end
     
@@ -20,6 +22,7 @@ class MeditationsController < ApplicationController
       def create
         # byebug
         meditation = Meditation.new()
+        # byebug
         meditation.audio.attach(params["audiozzzzzzz"])
         meditation.save
         # byebug
@@ -35,7 +38,8 @@ class MeditationsController < ApplicationController
       end
     
       def destroy
-        meditation = Meditation.find(meditation_params[:id])
+        byebug
+        meditation = Meditation.find(params[:id])
         meditation.destroy
       end
 
@@ -49,6 +53,6 @@ class MeditationsController < ApplicationController
       private
 
         def meditation_params
-          params.require(:meditation).permit(:text, :audio)
+          params.require(:meditation).permit(:text, :audio, :id)
         end
 end

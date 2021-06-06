@@ -18,9 +18,10 @@ class MeditationApi {
 
     static deleteMeditation(i) {
         debugger
-        linkus = i.querySelector("audio").getAttribute('src')
         
-        // fetch()
+        return fetch(`http://localhost:3000/meditations/${i["id"]}`, {
+                    method: 'DELETE'
+                })
     }
 
     
@@ -29,7 +30,7 @@ class MeditationApi {
                 .then(resp => resp.json())
                 .then(json => {
                     debugger
-                        Meditation.appendAllToPage(json["audio_array"])
+                        Meditation.appendAllToPage(json["med_hash"])
                 }
             )
         }       

@@ -1,8 +1,9 @@
 class Meditation {
    static all = []
 
-   constructor({audio}) {
+   constructor({id, audio}) {
       //   this.text = text
+      this.id = id
         this.audio = audio
         Meditation.all.push(this)
     }
@@ -20,32 +21,37 @@ class Meditation {
   }
 
   static appendAllToPage(audi) {
-    audi.forEach(aud => {
-        debugger
+    debugger
+    for (const key in audi) {
+          let medi = new this({
+                id: key,
+                audio: audi[key]
+              })
+          debugger
           const clipContainer = document.createElement('article');
           const clipLabel = document.createElement('p');
           const audio = document.createElement('audio');
           const deleteButton = document.createElement('button');
           debugger
-
+          
           // clipContainer.classList.add('clip')
           audio.setAttribute('controls', '');
-          audio.src = "http://localhost:3000" + aud
+          audio.src = "http://localhost:3000" + medi.audio
           debugger
           deleteButton.innerHTML = "Delete";
-
+          
           clipContainer.appendChild(audio);
-      clipContainer.appendChild(clipLabel);
-      clipContainer.appendChild(deleteButton);
-      soundClips().appendChild(clipContainer);
-      deleteButton.onclick = function(e) {
-        debugger
-        let evtTgt = e.target;
-        let thing = evtTgt.parentNode
-        MeditationApi.deleteMeditation(thing)
-        evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
-      }
-    })
+          clipContainer.appendChild(clipLabel);
+          clipContainer.appendChild(deleteButton);
+          soundClips().appendChild(clipContainer);
+          deleteButton.onclick = function(e) {
+            debugger
+            let evtTgt = e.target;
+            // let thing = evtTgt.parentNode.querySelector("audio").getAttribute("src")
+            MeditationApi.deleteMeditation(medi)
+            evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+          }
+    }
           // clipLabel.innerHTML = clipName;
 
 
