@@ -32,6 +32,8 @@ class Meditation {
           const clipLabel = document.createElement('p');
           const audio = document.createElement('audio');
           const deleteButton = document.createElement('button');
+          const commentDiv = document.createElement('div')
+          const ul = document.createElement('ul')
           debugger
           
           // clipContainer.classList.add('clip')
@@ -40,9 +42,13 @@ class Meditation {
           debugger
           deleteButton.innerHTML = "Delete";
           
+          commentDiv.appendChild(ul)    
+
+
           clipContainer.appendChild(audio);
           clipContainer.appendChild(clipLabel);
           clipContainer.appendChild(deleteButton);
+          clipContainer.appendChild(commentDiv)
           soundClips().appendChild(clipContainer);
           deleteButton.onclick = function(e) {
             debugger
