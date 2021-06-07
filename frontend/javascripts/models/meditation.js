@@ -69,6 +69,8 @@ class Meditation {
             li.innerHTML = commentText
             ul.appendChild(li)
             debugger
+            CommentApi.handleSubmit(commentText, medi.id)
+
           }
     }
           // clipLabel.innerHTML = clipName;

@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.innerHTML = commentText
         ul.appendChild(li)
         debugger
+        CommentApi.handleSubmit(commentText, medi.id)
       }
 
     }
