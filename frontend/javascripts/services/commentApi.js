@@ -4,7 +4,7 @@ class CommentApi {
 
 
     static handleSubmit = (text, mid) => {
-        debugger
+        
         const data = {
             content: text,
             meditation_id: mid
@@ -25,7 +25,7 @@ class CommentApi {
         fetch("http://localhost:3000/comments")
         .then(resp => resp.json())
         .then(json => {
-            debugger
+            
                 Comment.appendAllToPage(json)
             }
         )

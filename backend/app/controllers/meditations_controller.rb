@@ -38,7 +38,7 @@ class MeditationsController < ApplicationController
       end
     
       def destroy
-        byebug
+        # byebug
         meditation = Meditation.find(params[:id])
         meditation.destroy
       end

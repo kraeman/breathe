@@ -23,7 +23,7 @@ class Comment {
     }
 
     static appendAllToPage(i) {
-        debugger
+        
     }
 
 }

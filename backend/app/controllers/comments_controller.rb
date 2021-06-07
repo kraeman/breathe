@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
           hash[cid]["text"] = c
           hash[cid]["meditation_id"] = mid
         end
-        byebug
+        # byebug
         render json: hash
       end
     

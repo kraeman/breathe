@@ -17,7 +17,7 @@ class MeditationApi {
         }
 
     static deleteMeditation(i) {
-        debugger
+        
         
         return fetch(`http://localhost:3000/meditations/${i["id"]}`, {
                     method: 'DELETE'
@@ -29,33 +29,10 @@ class MeditationApi {
                 fetch("http://localhost:3000/meditations")
                 .then(resp => resp.json())
                 .then(json => {
-                    debugger
+                    
                         Meditation.appendAllToPage(json["med_hash"])
                 }
             )
         }       
 
-
-
-
-    // static postMeditation() {
-    //     const data = {
-    //         text: textBox().value
-    //     }
-
-
-    // fetch("http://localhost:3000/meditations", {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     "Content-Type": "application/json",
-    //                     "Accept": "application/json"
-    //                   },
-    //                 body: JSON.stringify(data)
-    //             })
-    //             .then(resp => resp.json())
-    //             .then(json => {
-    //             let med = new Meditation(json)
-    //             med.render()
-    //     })
-    //             }
 }

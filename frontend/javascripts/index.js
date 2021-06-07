@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clipContainer.appendChild(deleteButton);
       soundClips().appendChild(clipContainer);
 
-      debugger
+      
       
       deleteButton.onclick = function(e) {
         
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let li = document.createElement('li')
         li.innerHTML = commentText
         ul.appendChild(li)
-        debugger
+        
         CommentApi.handleSubmit(commentText, medi.id)
       }
 
