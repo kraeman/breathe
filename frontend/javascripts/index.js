@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       commentDiv.appendChild(ul)
 
-      clipContainer.id = Meditation.all[-1].id
+      // clipContainer.id = Meditation.all[-1].id
 
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(audio);
