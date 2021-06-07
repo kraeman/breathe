@@ -36,10 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const ul = document.createElement('ul')
       const commentBox = document.createElement("textarea")
       const br = document.createElement('br')
+      const submitCommentButton = document.createElement(['button'])
 
       clipContainer.classList.add('clip');
       audio.setAttribute('controls', '');
       deleteButton.innerHTML = "Delete Meditation";
+      submitCommentButton.innerHTML = "Submit Comment"
+
       clipLabel.innerHTML = clipName;
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
@@ -57,6 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(commentDiv)
       clipContainer.appendChild(commentBox)
+      clipContainer.appendChild(submitCommentButton)
+
       clipContainer.appendChild(br)
       clipContainer.appendChild(deleteButton);
       soundClips().appendChild(clipContainer);
@@ -70,6 +75,17 @@ document.addEventListener("DOMContentLoaded", () => {
         MeditationApi.deleteMeditation(thing)
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
       }
+
+
+
+      submitCommentButton.onclick = function(e) {
+        let commentText = e.target.parentNode.querySelector("textArea").value
+        let li = document.createElement('li')
+        li.innerHTML = commentText
+        ul.appendChild(li)
+        debugger
+      }
+
     }
   }
   

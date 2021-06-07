@@ -36,12 +36,14 @@ class Meditation {
           const ul = document.createElement('ul')
           const commentBox = document.createElement("textarea")
           const br = document.createElement('br')
-          
+          const submitCommentButton = document.createElement(['button'])
+
           // clipContainer.classList.add('clip')
           audio.setAttribute('controls', '');
           audio.src = "http://localhost:3000" + medi.audio
           debugger
           deleteButton.innerHTML = "Delete Meditation";
+          submitCommentButton.innerHTML = "Submit Comment"
           
           commentDiv.appendChild(ul)    
 
@@ -50,15 +52,23 @@ class Meditation {
           clipContainer.appendChild(clipLabel);
           clipContainer.appendChild(commentDiv)
               clipContainer.appendChild(commentBox)
+              clipContainer.appendChild(submitCommentButton)
               clipContainer.appendChild(br)
           clipContainer.appendChild(deleteButton);
           soundClips().appendChild(clipContainer);
           deleteButton.onclick = function(e) {
-            debugger
+            // debugger
             let evtTgt = e.target;
             // let thing = evtTgt.parentNode.querySelector("audio").getAttribute("src")
             MeditationApi.deleteMeditation(medi)
             evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+          }
+          submitCommentButton.onclick = function(e) {
+            let commentText = e.target.parentNode.querySelector("textArea").value
+            let li = document.createElement('li')
+            li.innerHTML = commentText
+            ul.appendChild(li)
+            debugger
           }
     }
           // clipLabel.innerHTML = clipName;
