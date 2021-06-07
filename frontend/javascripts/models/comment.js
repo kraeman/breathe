@@ -18,6 +18,7 @@ class Comment {
      }
 
     render() {
-            
+        const li = document.createElement("li")
+        li.innerHTML = `${this.text}`
     }
 }
