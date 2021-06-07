@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     MeditationApi.grabMeditations()
+    
     CommentApi.grabComments()
     // Meditation.appendAllToPage()
     getUserMedia()
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
       MeditationApi.postMeditation()
     }
   }
+
+  
   
   const starty = () => {
     mediaRecorder.start();
@@ -47,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       clipLabel.innerHTML = clipName;
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-      
       MeditationApi.persistAudio(blob)
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);
@@ -56,9 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
       
       commentDiv.appendChild(ul)
 
+      clipContainer.id = Meditation.all[-1].id
 
-      clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
+      clipContainer.appendChild(audio);
       clipContainer.appendChild(commentDiv)
       clipContainer.appendChild(commentBox)
       clipContainer.appendChild(submitCommentButton)

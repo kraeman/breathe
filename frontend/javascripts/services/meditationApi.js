@@ -9,11 +9,11 @@ class MeditationApi {
                     method: 'POST',
                     body: formData
                 })
-        //         .then(resp => resp.json())
-        //         .then(json => {
-        //         let med = new Meditation(json)
+                .then(resp => resp.json())
+                .then(json => {
+                let med = new Meditation(json)
             
-        // })
+        })
         }
 
     static deleteMeditation(i) {
@@ -25,7 +25,7 @@ class MeditationApi {
     }
 
     
-    static grabMeditations() {
+    static async grabMeditations() {
                 fetch("http://localhost:3000/meditations")
                 .then(resp => resp.json())
                 .then(json => {
@@ -33,6 +33,7 @@ class MeditationApi {
                         Meditation.appendAllToPage(json["med_hash"])
                 }
             )
+            
         }       
 
 }

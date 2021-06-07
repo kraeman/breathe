@@ -47,9 +47,9 @@ class Meditation {
           
           commentDiv.appendChild(ul)    
 
-
-          clipContainer.appendChild(audio);
+            clipContainer.id = medi.id
           clipContainer.appendChild(clipLabel);
+          clipContainer.appendChild(audio);
           clipContainer.appendChild(commentDiv)
               clipContainer.appendChild(commentBox)
               clipContainer.appendChild(submitCommentButton)
