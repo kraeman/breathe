@@ -34,10 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const deleteButton = document.createElement('button');
       const commentDiv = document.createElement('div')
       const ul = document.createElement('ul')
-      
+      const commentBox = document.createElement("textarea")
+      const br = document.createElement('br')
+
       clipContainer.classList.add('clip');
       audio.setAttribute('controls', '');
-      deleteButton.innerHTML = "Delete";
+      deleteButton.innerHTML = "Delete Meditation";
       clipLabel.innerHTML = clipName;
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
@@ -51,11 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
       commentDiv.appendChild(ul)
 
 
-
       clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
-      clipContainer.appendChild(deleteButton);
       clipContainer.appendChild(commentDiv)
+      clipContainer.appendChild(commentBox)
+      clipContainer.appendChild(br)
+      clipContainer.appendChild(deleteButton);
       soundClips().appendChild(clipContainer);
 
       debugger
