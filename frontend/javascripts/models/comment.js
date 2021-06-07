@@ -21,4 +21,9 @@ class Comment {
         const li = document.createElement("li")
         li.innerHTML = `${this.text}`
     }
+
+    static appendAllToPage(i) {
+        debugger
+    }
+
 }

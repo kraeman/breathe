@@ -2,7 +2,17 @@ class CommentsController < ApplicationController
 
       def index
         comments = Comment.all
-        render json: CommentSerializer.new(comments)
+        hash = {}
+        comments.each do |com|
+          cid = com.id
+          c = com.content
+          mid = com.meditation_id
+          hash[cid] = {}
+          hash[cid]["text"] = c
+          hash[cid]["meditation_id"] = mid
+        end
+        byebug
+        render json: hash
       end
     
       def show

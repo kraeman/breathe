@@ -1,7 +1,7 @@
 class MeditationsController < ApplicationController
       def index
         meditations = Meditation.all
-        array = []
+        # array = []
         innerHash = {}
         meditations.each do |med|
           id = med.id

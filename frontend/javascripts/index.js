@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     MeditationApi.grabMeditations()
+    CommentApi.grabComments()
     // Meditation.appendAllToPage()
     getUserMedia()
     // submitTextButton().addEventListener("click", onMeditationSubmitClick)
