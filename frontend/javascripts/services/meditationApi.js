@@ -5,15 +5,19 @@ class MeditationApi {
         const formData = new FormData()
         formData.append("audiozzzzzzz", data)
         
-    return fetch("http://localhost:3000/meditations", {
+    fetch("http://localhost:3000/meditations", {
                     method: 'POST',
                     body: formData
                 })
-                .then(resp => resp.json())
-                .then(json => {
-                let med = new Meditation(json)
+                // .then(resp => {
+                    
+                //     debugger
+                //     resp.json()
+                // })
+                // .then(json => {
+                // let med = new Meditation(json)
             
-        })
+        // })
         }
 
     static deleteMeditation(i) {
@@ -25,14 +29,14 @@ class MeditationApi {
     }
 
     
-    static async grabMeditations() {
-                fetch("http://localhost:3000/meditations")
-                .then(resp => resp.json())
-                .then(json => {
-                    
-                        Meditation.appendAllToPage(json["med_hash"])
-                }
-            )
+    static grabMeditations() {
+                    fetch("http://localhost:3000/meditations")
+                    .then(resp => resp.json())
+                    .then(json => {
+                        
+                            Meditation.appendAllToPage(json["med_hash"])
+                    }
+                )
             
         }       
 
