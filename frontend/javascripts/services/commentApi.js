@@ -23,7 +23,7 @@ class CommentApi {
 
      static async grabComments() {
          const response = await MeditationApi.grabMeditations()
-         
+
         fetch("http://localhost:3000/comments")
         .then(resp => resp.json())
         .then(json => {

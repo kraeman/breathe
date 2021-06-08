@@ -21,11 +21,11 @@ class CommentsController < ApplicationController
       end
     
       def create
-        # byebug
         comment = Comment.new()
         comment.content = params["content"]
         comment.meditation_id = params['meditation_id']
         comment.save
+        # byebug
           #errors
       
       end
