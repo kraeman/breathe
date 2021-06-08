@@ -34,8 +34,10 @@ class Comment {
             li.innerHTML = comm.content
             let wta = document.getElementById(comm.med_id)
             // debugger
-            wta.appendChild(li)
-        }
+            if(wta) {
+                wta.appendChild(li)
+            }
+            }
     }
 
 }

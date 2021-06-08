@@ -14845,3 +14845,338 @@ Migrating to AddAudioToMeditations (20210604233627)
   [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/meditations" for ::1 at 2021-06-08 16:14:06 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 5038)
+
+
+Started GET "/comments" for ::1 at 2021-06-08 16:14:06 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1097)
+
+
+Started POST "/meditations" for ::1 at 2021-06-08 16:14:36 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007f8052023710 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210608-39920-164y2dl>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mMeditation Create (0.9ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-08 20:14:36.545542"], ["updated_at", "2021-06-08 20:14:36.545542"]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "8cbxj7hufujhizmzbeo7hzwen3t8"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 24131], ["checksum", "h6N5Xkdg1U8XzL56kfjkmQ=="], ["created_at", "2021-06-08 20:14:36.573876"]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-06-08 20:14:36.578049"]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mMeditation Update (0.1ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-08 20:14:36.579175"], ["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+[36m  Disk Storage (5.8ms) [0m[32mUploaded file to key: 8cbxj7hufujhizmzbeo7hzwen3t8 (checksum: h6N5Xkdg1U8XzL56kfjkmQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 65d26846-3a9c-4eb3-ac21-2bc484bc459f) to Async(default) with arguments: #<GlobalID:0x00007f8051575390 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+Completed 200 OK in 87ms (Views: 0.1ms | ActiveRecord: 4.6ms | Allocations: 29655)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f] Performing ActiveStorage::AnalyzeJob (Job ID: 65d26846-3a9c-4eb3-ac21-2bc484bc459f) from Async(default) enqueued at 2021-06-08T20:14:36Z with arguments: #<GlobalID:0x00007f8088b67028 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 8cbxj7hufujhizmzbeo7hzwen3t8[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [65d26846-3a9c-4eb3-ac21-2bc484bc459f] Performed ActiveStorage::AnalyzeJob (Job ID: 65d26846-3a9c-4eb3-ac21-2bc484bc459f) from Async(default) in 28.02ms
+Started GET "/meditations" for ::1 at 2021-06-08 16:14:52 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:6:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 2276)
+
+
+Started GET "/comments" for ::1 at 2021-06-08 16:14:52 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 648)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16543b6a5cba7059d5ba4ea3f954ed2de06cbfa9/audiozzz" for ::1 at 2021-06-08 16:14:52 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16543b6a5cba7059d5ba4ea3f954ed2de06cbfa9", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: 8cbxj7hufujhizmzbeo7hzwen3t8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR05pZUdvM2FIVm1kV3BvYVhwdGVtSmxiemRvZW5kbGJqTjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoxOTo1Mi4wOThaIiwicHVyIjoiYmxvYl9rZXkifX0=--aaa00d00d574b8a4cd10a185542d0caf46c87693/audiozzz)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR05pZUdvM2FIVm1kV3BvYVhwdGVtSmxiemRvZW5kbGJqTjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoxOTo1Mi4wOThaIiwicHVyIjoiYmxvYl9rZXkifX0=--aaa00d00d574b8a4cd10a185542d0caf46c87693/audiozzz
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 2298)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR05pZUdvM2FIVm1kV3BvYVhwdGVtSmxiemRvZW5kbGJqTjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoxOTo1Mi4wOThaIiwicHVyIjoiYmxvYl9rZXkifX0=--aaa00d00d574b8a4cd10a185542d0caf46c87693/audiozzz" for ::1 at 2021-06-08 16:14:52 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 0ms (ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started POST "/comments" for ::1 at 2021-06-08 16:15:09 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"first comment first recording", "meditation_id"=>"1", "comment"=>{"content"=>"first comment first recording", "meditation_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_at", "updated_at", "meditation_id") VALUES (?, ?, ?, ?)[0m  [["content", "first comment first recording"], ["created_at", "2021-06-08 20:15:09.234845"], ["updated_at", "2021-06-08 20:15:09.234845"], ["meditation_id", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Completed 204 No Content in 36ms (ActiveRecord: 3.4ms | Allocations: 4969)
+
+
+Started POST "/comments" for ::1 at 2021-06-08 16:15:13 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"second comment first recording", "meditation_id"=>"1", "comment"=>{"content"=>"second comment first recording", "meditation_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_at", "updated_at", "meditation_id") VALUES (?, ?, ?, ?)[0m  [["content", "second comment first recording"], ["created_at", "2021-06-08 20:15:13.780369"], ["updated_at", "2021-06-08 20:15:13.780369"], ["meditation_id", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Completed 204 No Content in 9ms (ActiveRecord: 2.5ms | Allocations: 2405)
+
+
+Started POST "/meditations" for ::1 at 2021-06-08 16:15:21 -0400
+Processing by MeditationsController#create as */*
+  Parameters: {"audiozzzzzzz"=>#<ActionDispatch::Http::UploadedFile:0x00007f805135c8d8 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210608-39920-1glhqu>, @original_filename="audiozzz", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audiozzzzzzz\"; filename=\"audiozzz\"\r\nContent-Type: application/octet-stream\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mMeditation Create (0.7ms)[0m  [1m[32mINSERT INTO "meditations" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-06-08 20:15:21.620889"], ["updated_at", "2021-06-08 20:15:21.620889"]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "riiegrslll6ddmkpw82dcq25oniu"], ["filename", "audiozzz"], ["content_type", "video/webm"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 20184], ["checksum", "zO12AvB/a7Vyd9QiC76HOw=="], ["created_at", "2021-06-08 20:15:21.635506"]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "audio"], ["record_type", "Meditation"], ["record_id", 2], ["blob_id", 2], ["created_at", "2021-06-08 20:15:21.644067"]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mMeditation Update (0.2ms)[0m  [1m[33mUPDATE "meditations" SET "updated_at" = ? WHERE "meditations"."id" = ?[0m  [["updated_at", "2021-06-08 20:15:21.647866"], ["id", 2]]
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:27:in `create'
+[36m  Disk Storage (5.3ms) [0m[32mUploaded file to key: riiegrslll6ddmkpw82dcq25oniu (checksum: zO12AvB/a7Vyd9QiC76HOw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 29f850c1-3f29-474d-9943-c4f74b28cf60) to Async(default) with arguments: #<GlobalID:0x00007f80513ee918 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/2>>
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 7069)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60] Performing ActiveStorage::AnalyzeJob (Job ID: 29f850c1-3f29-474d-9943-c4f74b28cf60) from Async(default) enqueued at 2021-06-08T20:15:21Z with arguments: #<GlobalID:0x00007f805141db50 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: riiegrslll6ddmkpw82dcq25oniu[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60] Skipping video analysis because FFmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60]   [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [29f850c1-3f29-474d-9943-c4f74b28cf60] Performed ActiveStorage::AnalyzeJob (Job ID: 29f850c1-3f29-474d-9943-c4f74b28cf60) from Async(default) in 22.29ms
+Started POST "/comments" for ::1 at 2021-06-08 16:15:33 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"first comment second recording", "meditation_id"=>"2", "comment"=>{"content"=>"first comment second recording", "meditation_id"=>"2"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_at", "updated_at", "meditation_id") VALUES (?, ?, ?, ?)[0m  [["content", "first comment second recording"], ["created_at", "2021-06-08 20:15:33.211250"], ["updated_at", "2021-06-08 20:15:33.211250"], ["meditation_id", 2]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Completed 204 No Content in 12ms (ActiveRecord: 2.6ms | Allocations: 2404)
+
+
+Started POST "/comments" for ::1 at 2021-06-08 16:15:40 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"second comment second recording", "meditation_id"=>"2", "comment"=>{"content"=>"second comment second recording", "meditation_id"=>"2"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mMeditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_at", "updated_at", "meditation_id") VALUES (?, ?, ?, ?)[0m  [["content", "second comment second recording"], ["created_at", "2021-06-08 20:15:40.226023"], ["updated_at", "2021-06-08 20:15:40.226023"], ["meditation_id", 2]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Completed 204 No Content in 9ms (ActiveRecord: 2.9ms | Allocations: 2387)
+
+
+Started GET "/meditations" for ::1 at 2021-06-08 16:16:14 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:6:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 3599)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da2a06946688bde26360f5c8732e948b37d45718/audiozzz" for ::1 at 2021-06-08 16:16:14 -0400
+Started GET "/comments" for ::1 at 2021-06-08 16:16:14 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16543b6a5cba7059d5ba4ea3f954ed2de06cbfa9/audiozzz" for ::1 at 2021-06-08 16:16:14 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da2a06946688bde26360f5c8732e948b37d45718", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Processing by CommentsController#index as */*
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: riiegrslll6ddmkpw82dcq25oniu (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToxNC44NzhaIiwicHVyIjoiYmxvYl9rZXkifX0=--8cda9a78eea7403f695376be16ff7a87fdb00444/audiozzz)[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16543b6a5cba7059d5ba4ea3f954ed2de06cbfa9", "filename"=>"audiozzz"}
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToxNC44NzhaIiwicHVyIjoiYmxvYl9rZXkifX0=--8cda9a78eea7403f695376be16ff7a87fdb00444/audiozzz
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms | Allocations: 2085)
+
+
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2250)
+
+
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 8cbxj7hufujhizmzbeo7hzwen3t8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR05pZUdvM2FIVm1kV3BvYVhwdGVtSmxiemRvZW5kbGJqTjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToxNC44OTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--ace3eb140a888ffc0214d4b8f7361d16ef21ed7b/audiozzz)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR05pZUdvM2FIVm1kV3BvYVhwdGVtSmxiemRvZW5kbGJqTjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToxNC44OTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--ace3eb140a888ffc0214d4b8f7361d16ef21ed7b/audiozzz
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms | Allocations: 3091)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToxNC44NzhaIiwicHVyIjoiYmxvYl9rZXkifX0=--8cda9a78eea7403f695376be16ff7a87fdb00444/audiozzz" for ::1 at 2021-06-08 16:16:14 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 205)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR05pZUdvM2FIVm1kV3BvYVhwdGVtSmxiemRvZW5kbGJqTjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToxNC44OTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--ace3eb140a888ffc0214d4b8f7361d16ef21ed7b/audiozzz" for ::1 at 2021-06-08 16:16:14 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 187)
+
+
+Started DELETE "/meditations/1" for ::1 at 2021-06-08 16:16:25 -0400
+Processing by MeditationsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meditations_controller.rb:44:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:44:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:44:in `destroy'
+  [1m[36mMeditation Destroy (0.1ms)[0m  [1m[31mDELETE FROM "meditations" WHERE "meditations"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/meditations_controller.rb:44:in `destroy'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meditations_controller.rb:44:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:44:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ff2303b3-f9f8-4de0-9f13-00662c24f854) to Async(default) with arguments: #<GlobalID:0x00007f8052844278 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+Completed 204 No Content in 26ms (ActiveRecord: 3.7ms | Allocations: 6124)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854] Performing ActiveStorage::PurgeJob (Job ID: ff2303b3-f9f8-4de0-9f13-00662c24f854) from Async(default) enqueued at 2021-06-08T20:16:25Z with arguments: #<GlobalID:0x00007f8052854808 @uri=#<URI::GID gid://meditation-api/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854]   [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854]   [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854]   [1m[36mActiveStorage::Blob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: 8cbxj7hufujhizmzbeo7hzwen3t8[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ff2303b3-f9f8-4de0-9f13-00662c24f854] Performed ActiveStorage::PurgeJob (Job ID: ff2303b3-f9f8-4de0-9f13-00662c24f854) from Async(default) in 15.93ms
+Started GET "/meditations" for ::1 at 2021-06-08 16:16:27 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:6:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 2062)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da2a06946688bde26360f5c8732e948b37d45718/audiozzz" for ::1 at 2021-06-08 16:16:27 -0400
+Started GET "/comments" for ::1 at 2021-06-08 16:16:27 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da2a06946688bde26360f5c8732e948b37d45718", "filename"=>"audiozzz"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: riiegrslll6ddmkpw82dcq25oniu (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToyNy40NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--caf87d6fe314250f0794f52b13c9c49f449d2357/audiozzz)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToyNy40NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--caf87d6fe314250f0794f52b13c9c49f449d2357/audiozzz
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1331)
+
+
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 660)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToyNy40NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--caf87d6fe314250f0794f52b13c9c49f449d2357/audiozzz" for ::1 at 2021-06-08 16:16:27 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 187)
+
+
+Started GET "/meditations" for ::1 at 2021-06-08 16:18:19 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:6:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2042)
+
+
+Started GET "/comments" for ::1 at 2021-06-08 16:18:19 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToyNy40NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--caf87d6fe314250f0794f52b13c9c49f449d2357/audiozzz" for ::1 at 2021-06-08 16:18:19 -0400
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 861)
+
+
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 187)
+
+
+Started GET "/meditations" for ::1 at 2021-06-08 16:18:23 -0400
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:6:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Meditation"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:9:in `block in index'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 2042)
+
+
+Started GET "/comments" for ::1 at 2021-06-08 16:18:23 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 817)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbWxwWldkeWMyeHNiRFprWkcxcmNIYzRNbVJqY1RJMWIyNXBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYjNwNmVpSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZWFZrYVc5NmVub0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzkyYVdSbGJ5OTNaV0p0QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNi0wOFQyMDoyMToyNy40NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--caf87d6fe314250f0794f52b13c9c49f449d2357/audiozzz" for ::1 at 2021-06-08 16:18:23 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audiozzz"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 187)
+
+
