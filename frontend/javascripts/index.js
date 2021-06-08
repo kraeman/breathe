@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    MeditationApi.grabMeditations()
+    // MeditationApi.grabMeditations()
     
     CommentApi.grabComments()
     // Meditation.appendAllToPage()

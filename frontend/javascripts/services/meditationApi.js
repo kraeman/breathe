@@ -30,14 +30,15 @@ class MeditationApi {
 
     
     static grabMeditations() {
-                    fetch("http://localhost:3000/meditations")
+            return new Promise((resolve, reject) => {
+                    resolve(fetch("http://localhost:3000/meditations")
                     .then(resp => resp.json())
                     .then(json => {
                         
                             Meditation.appendAllToPage(json["med_hash"])
                     }
-                )
-            
+                ))
+            })
         }       
 
 }

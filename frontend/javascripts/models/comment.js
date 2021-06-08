@@ -33,7 +33,7 @@ class Comment {
             let li = document.createElement('li')
             li.innerHTML = comm.content
             let wta = document.getElementById(comm.med_id)
-            debugger
+            // debugger
             wta.appendChild(li)
         }
     }
