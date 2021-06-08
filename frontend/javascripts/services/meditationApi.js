@@ -1,23 +1,25 @@
 class MeditationApi {
     static persistAudio(blob) {
-
-        const data = new File([blob], "audiozzz")
-        const formData = new FormData()
-        formData.append("audiozzzzzzz", data)
-        
-    fetch("http://localhost:3000/meditations", {
-                    method: 'POST',
-                    body: formData
-                })
-                // .then(resp => {
-                    
-                //     debugger
-                //     resp.json()
-                // })
-                // .then(json => {
-                // let med = new Meditation(json)
+        return new Promise((resolve, reject) => {
             
-        // })
+                    const data = new File([blob], "audiozzz")
+                    const formData = new FormData()
+                    formData.append("audiozzzzzzz", data)
+                    
+                fetch("http://localhost:3000/meditations", {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(resp => resp.json())
+                            .then(json => {
+                                // debugger
+
+                            new Meditation(json)
+                            
+                            resolve(27)
+                        
+                    })
+                })
         }
 
     static deleteMeditation(i) {

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaRecorder.ondataavailable = function(e) {
       chunks.push(e.data);
     }
-    mediaRecorder.onstop = function(e) {
+    mediaRecorder.onstop = async function(e) {
       console.log("recorder stopped");
       
       const clipName = prompt('Enter a name for your sound clip');
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clipLabel.innerHTML = clipName;
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-      MeditationApi.persistAudio(blob)
+      await MeditationApi.persistAudio(blob)
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
       commentDiv.appendChild(ul)
 // debugger
-      // clipContainer.id = Meditation.all[Meditation.all.length - 1].id
+    
+      clipContainer.id = Meditation.all[Meditation.all.length - 1].id
 
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(audio);
@@ -87,8 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let li = document.createElement('li')
         li.innerHTML = commentText
         ul.appendChild(li)
-        
-        CommentApi.handleSubmit(commentText, medi.id)
+        // debugger
+        CommentApi.handleSubmit(commentText, e.target.parentNode.id)
       }
 
     }

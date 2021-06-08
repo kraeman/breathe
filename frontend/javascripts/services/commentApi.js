@@ -27,7 +27,7 @@ class CommentApi {
         fetch("http://localhost:3000/comments")
         .then(resp => resp.json())
         .then(json => {
-            
+            // debugger
                 Comment.appendAllToPage(json)
             }
         )

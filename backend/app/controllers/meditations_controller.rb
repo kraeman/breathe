@@ -24,10 +24,11 @@ class MeditationsController < ApplicationController
         meditation = Meditation.new()
         # byebug
         meditation.audio.attach(params["audiozzzzzzz"])
-        meditation.save
+        if meditation.save
         # byebug
-        # url = Rails.application.routes.url_helpers.rails_blob_url(r.first, only_path: true)
-        # render json: {message: "Attached to File", url: url}
+        
+          render json: {id: meditation.id}
+        end
       end
     
       def update
