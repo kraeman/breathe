@@ -1,51 +1,33 @@
 class MeditationsController < ApplicationController
       def index
         meditations = Meditation.all
-        # array = []
-        innerHash = {}
-        meditations.each do |med|
-          id = med.id
-          r = med.audio
-          audio = Rails.application.routes.url_helpers.rails_blob_url(r, only_path: true)
-          innerHash[id] = audio
+        hash = {}
+        meditations.each do |meditation|
+          meditation_id = meditation.id
+          audio = meditation.audio
+          url = Rails.application.routes.url_helpers.rails_blob_url(audio, only_path: true)
+          hash[meditation_id] = url
         end
         # byebug
-        render json: {message: "Attached to File", med_hash: innerHash}
+        render json: hash
 
       end
     
-      def show
-        meditation = Meditation.find(meditation_params[:id])
-        render json: meditation
-      end
-    
       def create
-        # byebug
         meditation = Meditation.new()
-        # byebug
-        meditation.audio.attach(params["audiozzzzzzz"])
-        if meditation.save
-        # byebug
-        
+        meditation.audio.attach(meditation_params["audio"])
+        if meditation.save        
           render json: {id: meditation.id}
         end
       end
     
-      def update
-        meditation = Meditation.find(meditation_params[:id])
-        if meditation.update(meditation_params)
-          render json: meditation
-        end
-      end
-    
       def destroy
-        # byebug
-        meditation = Meditation.find(params[:id])
+        meditation = Meditation.find(meditation_params[:id])
         meditation.destroy
       end
 
       def attach_audio
-        meditation = Meditation.find(params[:id])
+        meditation = Meditation.find(meditation_params[:id])
         a = meditation.audio.attach(meditation_params[:audio])
         url = Rails.application.routes.url_helpers.rails_blob_url(a.first, only_path: true)
         render json: {message: "Attached to File", url: url}
@@ -54,6 +36,6 @@ class MeditationsController < ApplicationController
       private
 
         def meditation_params
-          params.require(:meditation).permit(:text, :audio, :id)
+          params.permit(:audio, :id)
         end
 end

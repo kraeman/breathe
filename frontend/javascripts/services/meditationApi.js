@@ -2,9 +2,9 @@ class MeditationApi {
     static persistAudio(blob) {
         return new Promise((resolve, reject) => {
             
-                    const data = new File([blob], "audiozzz")
+                    const data = new File([blob], "audio_file")
                     const formData = new FormData()
-                    formData.append("audiozzzzzzz", data)
+                    formData.append("audio", data)
                     
                 fetch("http://localhost:3000/meditations", {
                                 method: 'POST',
@@ -12,11 +12,10 @@ class MeditationApi {
                             })
                             .then(resp => resp.json())
                             .then(json => {
-                                // debugger
 
                             new Meditation(json)
                             
-                            resolve(27)
+                            resolve("persisted")
                         
                     })
                 })
@@ -37,7 +36,7 @@ class MeditationApi {
                     .then(resp => resp.json())
                     .then(json => {
                         
-                            Meditation.appendAllToPage(json["med_hash"])
+                            Meditation.appendAllToPage(json)
                     }
                 ))
             })

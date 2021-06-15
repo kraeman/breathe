@@ -1,29 +1,23 @@
 class Comment {
     static all = []
 
-    constructor({author, id, med_id, content}) {
-        this.author = author
+    constructor({id, meditation_id, content}) {
         this.id = id
-        this.med_id = med_id
+        this.meditation_id = meditation_id
         this.content = content
         Comment.all.push(this)
     }
  
-     static findById(id) {
-         return this.all.find(comment => comment.id === id)
-     }
- 
-     static findOrCreateBy(commentObj) {
-         return this.findByName(commentObj.name) || new Comment(commentObj)
-     }
+    // static findOrCreateBy(commentObj) {
+    //     return this.find(commentObj.id) || new Comment(commentObj)
+    // }
 
-    render() {
-        const li = document.createElement("li")
-        li.innerHTML = `${this.text}`
-    }
+    // render() {
+    //     const li = document.createElement("li")
+    //     li.innerHTML = `${this.text}`
+    // }
 
     static appendAllToPage(i) {
-        // debugger
         for (const key in i) {
             let comm = new this({
                 id: key,
@@ -33,7 +27,6 @@ class Comment {
             let li = document.createElement('li')
             li.innerHTML = comm.content
             let wta = document.getElementById(comm.med_id)
-            // debugger
             if(wta) {
                 wta.appendChild(li)
             }
