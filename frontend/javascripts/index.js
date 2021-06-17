@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Meditation.appendAllToPage()
     getUserMedia()
     // submitTextButton().addEventListener("click", onMeditationSubmitClick)
-    StartRecordingButton().addEventListener("click", starty)
-    stopRecordingButton().addEventListener("click", stoppy)
+    recordingButton().addEventListener("click", starty)
+    
   })
   
   const onMeditationSubmitClick = (event) => {
@@ -27,9 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaRecorder.ondataavailable = function(e) {
       chunks.push(e.data);
     }
+    recordingButton().removeEventListener("click", starty)
+    recordingButton().innerHTML = "Stop"
+    recordingButton().addEventListener("click", stoppy)
     mediaRecorder.onstop = async function(e) {
       console.log("recorder stopped");
-      
+      recordingButton().removeEventListener("click", stoppy)
+
+      recordingButton().innerHTML = "Record"
+      recordingButton().addEventListener("click", starty)
       const clipName = prompt('Enter a name for your sound clip');
       
       const clipContainer = document.createElement('article');

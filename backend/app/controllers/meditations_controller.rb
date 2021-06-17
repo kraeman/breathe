@@ -8,7 +8,6 @@ class MeditationsController < ApplicationController
           url = Rails.application.routes.url_helpers.rails_blob_url(audio, only_path: true)
           hash[meditation_id] = url
         end
-        # byebug
         render json: hash
 
       end
@@ -19,6 +18,7 @@ class MeditationsController < ApplicationController
         if meditation.save        
           render json: {id: meditation.id}
         end
+        # errors
       end
     
       def destroy
