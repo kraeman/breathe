@@ -19,14 +19,11 @@ class MeditationsController < ApplicationController
         meditation.audio.attach(meditation_params["audio"])
         meditation.title = meditation_params["title"]
         if meditation.save
-          url = Rails.application.routes.url_helpers.rails_blob_url(meditation.audio, only_path: true)
-          # byebug
-          # byebug        
+          url = Rails.application.routes.url_helpers.rails_blob_url(meditation.audio, only_path: true)        
           render json: {title: meditation.title, audio: url, id: meditation.id}
         else
           render json: {error: meditation.errors}
         end
-        # errors
       end
     
       def destroy

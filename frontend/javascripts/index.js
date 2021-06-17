@@ -1,10 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // MeditationApi.grabMeditations()
-    
-    // CommentApi.grabComments()
+document.addEventListener("DOMContentLoaded", () => {    
     MeditationApi.grabMeditations()
     getUserMedia()
-    // submitTextButton().addEventListener("click", onMeditationSubmitClick)
     recordingButton().addEventListener("click", starty)
     
   })
@@ -43,63 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       chunks = [];
       MeditationApi.persistAudio(blob, clipName)
 
-      
-      // const clipContainer = document.createElement('article');
-      // const clipLabel = document.createElement('p');
-      // const audio = document.createElement('audio');
-      // const deleteButton = document.createElement('button');
-      // const commentDiv = document.createElement('div')
-      // const ul = document.createElement('ul')
-      // const commentBox = document.createElement("textarea")
-      // const br = document.createElement('br')
-      // const submitCommentButton = document.createElement(['button'])
-
-      // clipContainer.classList.add('clip');
-      // audio.setAttribute('controls', '');
-      // deleteButton.innerHTML = "Delete Meditation";
-      // submitCommentButton.innerHTML = "Submit Comment"
-
-      // clipLabel.innerHTML = clipName;
-      
-      
-      
-      
-      // commentDiv.appendChild(ul)
-// debugger
-    
-      // clipContainer.id = Meditation.all[Meditation.all.length - 1].id
-
-      // clipContainer.appendChild(clipLabel);
-      // clipContainer.appendChild(audio);
-      // clipContainer.appendChild(commentDiv)
-      // clipContainer.appendChild(commentBox)
-      // clipContainer.appendChild(submitCommentButton)
-
-      // clipContainer.appendChild(br)
-      // clipContainer.appendChild(deleteButton);
-      // soundClips().appendChild(clipContainer);
-
-      
-      
-      // deleteButton.onclick = function(e) {
-        
-      //   let evtTgt = e.target;
-      //   let thing = evtTgt.parentNode.querySelector("audio").getAttribute('src')
-      //   MeditationApi.deleteMeditation(thing)
-      //   evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
-      // }
-
-
-
-      // submitCommentButton.onclick = function(e) {
-      //   let commentText = e.target.parentNode.querySelector("textArea").value
-      //   let li = document.createElement('li')
-      //   li.innerHTML = commentText
-      //   ul.appendChild(li)
-      //   // debugger
-      //   CommentApi.handleSubmit(commentText, e.target.parentNode.id)
-      // }
-
     }
   }
   
@@ -115,19 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       console.log('getUserMedia supported.');
       navigator.mediaDevices.getUserMedia (
-        // constraints - only audio needed for this app
         {
           audio: true
         })
         
-        // Success callback
         .then(function(stream) {
           console.log("congrats")
           return mediaRecorder = new MediaRecorder(stream)
           
         })
         
-        // Error callback
        .catch(function(err) {
           console.log('The following getUserMedia error occurred: ' + err);
        }

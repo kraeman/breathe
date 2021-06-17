@@ -1,8 +1,6 @@
 class CommentApi {
     static all = []
 
-
-
     static handleSubmit = (text, mid) => {
         
         const data = {
@@ -18,26 +16,9 @@ class CommentApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            // debugger
             let comment = new Comment(json["data"]["attributes"])
-            // debugger
             comment.render()
         })
     }
-
-
-
-
-    //  static async grabComments() {
-    //      const response = await MeditationApi.grabMeditations()
-
-    //     fetch("http://localhost:3000/comments")
-    //     .then(resp => resp.json())
-    //     .then(json => {
-    //         // debugger
-    //             Comment.appendAllToPage(json)
-    //         }
-    //     )
-    // }   
 
 }

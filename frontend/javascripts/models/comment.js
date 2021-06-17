@@ -8,12 +8,7 @@ class Comment {
         Comment.all.push(this)
     }
  
-    // static findOrCreateBy(commentObj) {
-    //     return this.find(commentObj.id) || new Comment(commentObj)
-    // }
-
     render() {
-        // debugger
         const li = document.createElement("li")
         li.innerHTML = this.content
        let wta = document.getElementById(this.meditation_id).querySelector("ul")

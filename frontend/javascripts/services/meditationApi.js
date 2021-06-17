@@ -13,12 +13,10 @@ class MeditationApi {
                             })
                             .then(resp => resp.json())
                             .then(json => {
-                                // debugger
                                 if(json["error"]) {
                                     alert(json['error']["title"][0])
                                 }else {
                                     let medita = new Meditation(json)
-                                    // debugger
                                     medita.render()
                                 }
                                 
@@ -37,15 +35,12 @@ class MeditationApi {
 
     
     static grabMeditations() {
-            // return new Promise((resolve, reject) => {
                     fetch("http://localhost:3000/meditations")
                     .then(resp => resp.json())
                     .then(json => {
-                        // debugger
                             Meditation.appendAllToPage(json)
                     }
                 )
-            // })
         }       
 
 }
