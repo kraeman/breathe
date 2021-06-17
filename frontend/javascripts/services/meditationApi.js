@@ -1,6 +1,6 @@
 class MeditationApi {
     static persistAudio(blob, title) {
-        return new Promise((resolve, reject) => {
+        
             
                     const data = new File([blob], "meditation_file")
                     const formData = new FormData()
@@ -13,15 +13,19 @@ class MeditationApi {
                             })
                             .then(resp => resp.json())
                             .then(json => {
-                                if(json["title"]) {
-                                    alert(json["title"][0])
+                                // debugger
+                                if(json["error"]) {
+                                    alert(json['error']["title"][0])
                                 }else {
-                                    new Meditation(json)
+                                    // debugger
+                                    let medita = new Meditation(json)
+                                    // debugger
+                                    medita.render()
                                 }
-                                resolve("persisted")
+                                
                         
                     })
-                })
+               
         }
 
     static deleteMeditation(i) {

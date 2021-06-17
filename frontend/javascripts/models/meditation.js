@@ -11,9 +11,55 @@ class Meditation {
     }
 
    render() {
-        //  const li = document.createElement("li")
-        //  li.innerHTML = this.text
-        //  listOfMeditations().appendChild(li)
+     debugger
+    const clipContainer = document.createElement('article');
+    const clipLabel = document.createElement('p');
+    const audio = document.createElement('audio');
+    const deleteButton = document.createElement('button');
+    const commentDiv = document.createElement('div')
+    const ul = document.createElement('ul')
+    const commentBox = document.createElement("textarea")
+    const br = document.createElement('br')
+    const submitCommentButton = document.createElement(['button'])
+
+    clipContainer.classList.add('clip');
+    audio.setAttribute('controls', '');
+    deleteButton.innerHTML = "Delete Meditation";
+    submitCommentButton.innerHTML = "Submit Comment"
+
+    clipLabel.innerHTML = this.title;
+    debugger
+    audio.src = "http://localhost:3000" + this.audio
+    commentDiv.appendChild(ul)
+    clipContainer.id = this.id
+
+    clipContainer.appendChild(clipLabel);
+      clipContainer.appendChild(audio);
+      clipContainer.appendChild(commentDiv)
+      clipContainer.appendChild(commentBox)
+      clipContainer.appendChild(submitCommentButton)
+
+      clipContainer.appendChild(br)
+      clipContainer.appendChild(deleteButton);
+      soundClips().appendChild(clipContainer);
+
+      deleteButton.onclick = function(e) {
+        
+        let evtTgt = e.target;
+        let thing = evtTgt.parentNode.querySelector("audio").getAttribute('src')
+        MeditationApi.deleteMeditation(thing)
+        evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+      }
+
+
+      submitCommentButton.onclick = function(e) {
+        let commentText = e.target.parentNode.querySelector("textArea").value
+        let li = document.createElement('li')
+        li.innerHTML = commentText
+        ul.appendChild(li)
+        // debugger
+        CommentApi.handleSubmit(commentText, e.target.parentNode.id)
+      }
    }
 
    
