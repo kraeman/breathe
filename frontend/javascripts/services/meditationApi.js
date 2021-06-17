@@ -30,7 +30,7 @@ class MeditationApi {
     static deleteMeditation(i) {
         
         
-        return fetch(`http://localhost:3000/meditations/${i["id"]}`, {
+        return fetch(`http://localhost:3000/meditations/${i}`, {
                     method: 'DELETE'
                 })
     }
