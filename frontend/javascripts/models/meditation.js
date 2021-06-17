@@ -27,27 +27,26 @@ class Meditation {
     submitCommentButton.innerHTML = "Submit Comment"
 
     clipLabel.innerHTML = this.title;
-    if(this.comments){
-      this.comments.forEach(comment => {
-        const li = document.createElement("li")
-        li.innerHTML = comment.content
-        ul.appendChild(li)
-      })
-  }
     audio.src = "http://localhost:3000" + this.audio
     commentDiv.appendChild(ul)
     clipContainer.id = this.id
-
+    
     clipContainer.appendChild(clipLabel);
-      clipContainer.appendChild(audio);
-      clipContainer.appendChild(commentDiv)
-      clipContainer.appendChild(commentBox)
-      clipContainer.appendChild(submitCommentButton)
-
-      clipContainer.appendChild(br)
-      clipContainer.appendChild(deleteButton);
-      soundClips().appendChild(clipContainer);
-
+    clipContainer.appendChild(audio);
+    clipContainer.appendChild(commentDiv)
+    clipContainer.appendChild(commentBox)
+    clipContainer.appendChild(submitCommentButton)
+    
+    clipContainer.appendChild(br)
+    clipContainer.appendChild(deleteButton);
+    soundClips().appendChild(clipContainer);
+    
+    if(this.comments){
+      this.comments.forEach(comment => {
+        let c = new Comment(comment)
+        c.render()
+      })
+  }
       deleteButton.onclick = function(e) {
         
         let evtTgt = e.target;
