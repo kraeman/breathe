@@ -12,10 +12,14 @@ class Comment {
     //     return this.find(commentObj.id) || new Comment(commentObj)
     // }
 
-    // render() {
-    //     const li = document.createElement("li")
-    //     li.innerHTML = `${this.text}`
-    // }
+    render() {
+        // debugger
+        const li = document.createElement("li")
+        li.innerHTML = this.content
+       let wta = document.getElementById(this.meditation_id).querySelector("ul")
+        wta.appendChild(li)
+        
+    }
 
     static appendAllToPage(i) {
         for (const key in i) {

@@ -18,9 +18,10 @@ class CommentsController < ApplicationController
         comment = Comment.new()
         comment.content = comment_params["content"]
         comment.meditation_id = comment_params['meditation_id']
-        comment.save
-        #send back to front end for jsoo if save
-        #errors
+        if comment.save 
+          # byebug
+          render json: comment
+        end
       end
     
       private

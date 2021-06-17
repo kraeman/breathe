@@ -54,9 +54,9 @@ class Meditation {
 
       submitCommentButton.onclick = function(e) {
         let commentText = e.target.parentNode.querySelector("textArea").value
-        let li = document.createElement('li')
-        li.innerHTML = commentText
-        ul.appendChild(li)
+        // let li = document.createElement('li')
+        // li.innerHTML = commentText
+        // ul.appendChild(li)
         // debugger
         CommentApi.handleSubmit(commentText, e.target.parentNode.id)
       }
@@ -121,9 +121,9 @@ class Meditation {
           }
           submitCommentButton.onclick = function(e) {
             let commentText = e.target.parentNode.querySelector("textArea").value
-            let li = document.createElement('li')
-            li.innerHTML = commentText
-            ul.appendChild(li)
+            // let li = document.createElement('li')
+            // li.innerHTML = commentText
+            // ul.appendChild(li)
             CommentApi.handleSubmit(commentText, medi.id)
 
           }

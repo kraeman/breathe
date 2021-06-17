@@ -16,6 +16,13 @@ class CommentApi {
             },
             body: JSON.stringify(data)
         })
+        .then(resp => resp.json())
+        .then(json => {
+            
+            let comment = new Comment(json)
+            // debugger
+            comment.render()
+        })
     }
 
 
