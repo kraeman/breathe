@@ -13,7 +13,7 @@ class MeditationApi {
                             })
                             .then(resp => resp.json())
                             .then(json => {
-                                if(json["title"][0] === "can't be blank" || json["title"][0] === "has already been taken") {
+                                if(json["title"]) {
                                     alert(json["title"][0])
                                 }else {
                                     new Meditation(json)

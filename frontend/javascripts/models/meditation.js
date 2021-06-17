@@ -48,7 +48,7 @@ class Meditation {
           deleteButton.innerHTML = "Delete Meditation";
           submitCommentButton.innerHTML = "Submit Comment"
           clipLabel.innerHTML = medi.title
-          debugger
+          
           medi.comments.forEach(comment => {
             const li = document.createElement("li")
             li.innerHTML = comment.content
