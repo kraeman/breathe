@@ -1,11 +1,12 @@
 class Meditation {
    static all = []
 
-   constructor({id, audio, title}) {
+   constructor({id, audio, title, comments}) {
       //   this.text = text
       this.id = id
         this.audio = audio
         this.title = title
+        this.comments = comments
         Meditation.all.push(this)
     }
 
@@ -22,13 +23,14 @@ class Meditation {
   }
 
   static appendAllToPage(audi) {
+    // debugger
     for (const key in audi) {
           let medi = new this({
                 id: key,
                 audio: audi[key]["url"],
-                title: audi[key]["title"]
+                title: audi[key]["title"],
+                comments: audi[key]["comments"]
               })
-          
           const clipContainer = document.createElement('article');
           const clipLabel = document.createElement('p');
           const audio = document.createElement('audio');
@@ -46,7 +48,14 @@ class Meditation {
           deleteButton.innerHTML = "Delete Meditation";
           submitCommentButton.innerHTML = "Submit Comment"
           clipLabel.innerHTML = medi.title
-          
+          debugger
+          medi.comments.forEach(comment => {
+            const li = document.createElement("li")
+            li.innerHTML = comment.content
+            ul.appendChild(li)
+          })
+
+
           commentDiv.appendChild(ul)    
 
             clipContainer.id = medi.id

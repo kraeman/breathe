@@ -13,10 +13,12 @@ class MeditationApi {
                             })
                             .then(resp => resp.json())
                             .then(json => {
-
-                            new Meditation(json)
-                            
-                            resolve("persisted")
+                                if(json["title"][0] === "can't be blank" || json["title"][0] === "has already been taken") {
+                                    alert(json["title"][0])
+                                }else {
+                                    new Meditation(json)
+                                }
+                                resolve("persisted")
                         
                     })
                 })
@@ -32,15 +34,15 @@ class MeditationApi {
 
     
     static grabMeditations() {
-            return new Promise((resolve, reject) => {
-                    resolve(fetch("http://localhost:3000/meditations")
+            // return new Promise((resolve, reject) => {
+                    fetch("http://localhost:3000/meditations")
                     .then(resp => resp.json())
                     .then(json => {
-                        
+                        // debugger
                             Meditation.appendAllToPage(json)
                     }
-                ))
-            })
+                )
+            // })
         }       
 
 }

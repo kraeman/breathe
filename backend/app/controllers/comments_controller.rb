@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
-      def index
-        comments = Comment.all
-        hash = {}
-        comments.each do |comment|
-          comment_id = comment.id
-          content = comment.content
-          meditation_id = comment.meditation_id
-          hash[comment_id] = {}
-          hash[comment_id]["text"] = content
-          hash[comment_id]["meditation_id"] = meditation_id
-        end
-        #serializer
-        render json: hash
-      end
+      # def index
+      #   comments = Comment.all
+      #   hash = {}
+      #   comments.each do |comment|
+      #     comment_id = comment.id
+      #     content = comment.content
+      #     meditation_id = comment.meditation_id
+      #     hash[comment_id] = {}
+      #     hash[comment_id]["text"] = content
+      #     hash[comment_id]["meditation_id"] = meditation_id
+      #   end
+      #   #serializer
+      #   render json: hash
+      # end
     
       def create
         comment = Comment.new()
