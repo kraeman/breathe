@@ -11,7 +11,7 @@ class Meditation {
     }
 
    render() {
-     debugger
+     
     const clipContainer = document.createElement('article');
     const clipLabel = document.createElement('p');
     const audio = document.createElement('audio');
@@ -28,7 +28,7 @@ class Meditation {
     submitCommentButton.innerHTML = "Submit Comment"
 
     clipLabel.innerHTML = this.title;
-    debugger
+    
     audio.src = "http://localhost:3000" + this.audio
     commentDiv.appendChild(ul)
     clipContainer.id = this.id
@@ -46,8 +46,7 @@ class Meditation {
       deleteButton.onclick = function(e) {
         
         let evtTgt = e.target;
-        let thing = evtTgt.parentNode.querySelector("audio").getAttribute('src')
-        MeditationApi.deleteMeditation(thing)
+        MeditationApi.deleteMeditation(this.id)
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
       }
 
@@ -69,7 +68,7 @@ class Meditation {
   }
 
   static appendAllToPage(audi) {
-    // debugger
+    
     for (const key in audi) {
           let medi = new this({
                 id: key,

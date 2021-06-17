@@ -17,7 +17,6 @@ class MeditationApi {
                                 if(json["error"]) {
                                     alert(json['error']["title"][0])
                                 }else {
-                                    // debugger
                                     let medita = new Meditation(json)
                                     // debugger
                                     medita.render()

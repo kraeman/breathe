@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
         comment.meditation_id = comment_params['meditation_id']
         if comment.save 
           # byebug
-          render json: comment
+          render json: CommentSerializer.new(comment)
         end
       end
     

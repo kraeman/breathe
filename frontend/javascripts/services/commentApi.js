@@ -18,8 +18,8 @@ class CommentApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            
-            let comment = new Comment(json)
+            // debugger
+            let comment = new Comment(json["data"]["attributes"])
             // debugger
             comment.render()
         })
