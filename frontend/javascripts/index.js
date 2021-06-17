@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {    
     MeditationApi.grabMeditations()
     getUserMedia()
-    recordingButton().addEventListener("click", starty)
+    recordingButton().addEventListener("click", start)
     
   })
   
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   
-  const starty = () => {
+  const start = () => {
     mediaRecorder.start();
     console.log(mediaRecorder.state);
     console.log("recorder started");
@@ -23,17 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaRecorder.ondataavailable = function(e) {
       chunks.push(e.data);
     }
-    recordingButton().removeEventListener("click", starty)
+    recordingButton().removeEventListener("click", start)
     recordingButton().innerHTML = "Stop"
-    recordingButton().addEventListener("click", stoppy)
+    recordingButton().addEventListener("click", stop)
     mediaRecorder.onstop = function(e) {
       console.log("recorder stopped");
-      recordingButton().removeEventListener("click", stoppy)
+      recordingButton().removeEventListener("click", stop)
 
       recordingButton().innerHTML = "Record"
-      recordingButton().addEventListener("click", starty)
+      recordingButton().addEventListener("click", start)
       
-      const clipName = prompt('Enter a name for your sound clip');
+      const clipName = prompt('Enter a name for your meditation');
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
       chunks = [];
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
   
-  const stoppy = (event) => {
+  const stop = (event) => {
     mediaRecorder.stop()
     
   }

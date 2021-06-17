@@ -1,7 +1,5 @@
 class MeditationApi {
     static persistAudio(blob, title) {
-        
-            
                     const data = new File([blob], "meditation_file")
                     const formData = new FormData()
                     formData.append("audio", data)
@@ -19,10 +17,7 @@ class MeditationApi {
                                     let medita = new Meditation(json)
                                     medita.render()
                                 }
-                                
-                        
                     })
-               
         }
 
     static deleteMeditation(i) {
