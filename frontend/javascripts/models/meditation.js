@@ -29,7 +29,7 @@ class Meditation {
               })
           
           const clipContainer = document.createElement('article');
-          const clipLabel = document.createElement('p');
+          // const clipLabel = document.createElement('p');
           const audio = document.createElement('audio');
           const deleteButton = document.createElement('button');
           const commentDiv = document.createElement('div')
@@ -48,7 +48,7 @@ class Meditation {
           commentDiv.appendChild(ul)    
 
             clipContainer.id = medi.id
-          clipContainer.appendChild(clipLabel);
+          // clipContainer.appendChild(clipLabel);
           clipContainer.appendChild(audio);
           clipContainer.appendChild(commentDiv)
               clipContainer.appendChild(commentBox)
