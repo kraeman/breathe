@@ -1,10 +1,11 @@
 class MeditationApi {
-    static persistAudio(blob) {
+    static persistAudio(blob, title) {
         return new Promise((resolve, reject) => {
             
-                    const data = new File([blob], "audio_file")
+                    const data = new File([blob], "meditation_file")
                     const formData = new FormData()
                     formData.append("audio", data)
+                    formData.append("title", title)
                     
                 fetch("http://localhost:3000/meditations", {
                                 method: 'POST',

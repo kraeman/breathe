@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const clipName = prompt('Enter a name for your sound clip');
       
       const clipContainer = document.createElement('article');
-      // const clipLabel = document.createElement('p');
+      const clipLabel = document.createElement('p');
       const audio = document.createElement('audio');
       const deleteButton = document.createElement('button');
       const commentDiv = document.createElement('div')
@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.innerHTML = "Delete Meditation";
       submitCommentButton.innerHTML = "Submit Comment"
 
-      // clipLabel.innerHTML = clipName;
+      clipLabel.innerHTML = clipName;
       
       const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-      await MeditationApi.persistAudio(blob)
+      await MeditationApi.persistAudio(blob, clipName)
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
       clipContainer.id = Meditation.all[Meditation.all.length - 1].id
 
-      // clipContainer.appendChild(clipLabel);
+      clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(audio);
       clipContainer.appendChild(commentDiv)
       clipContainer.appendChild(commentBox)
