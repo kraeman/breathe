@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     MeditationApi.grabMeditations()
     getUserMedia()
     recordingButton().addEventListener("click", start)
+    searchBarButton().addEventListener("click", Meditation.filterByKeyWord)
     
   })
   

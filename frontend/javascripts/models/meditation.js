@@ -80,5 +80,18 @@ class Meditation {
     }
 
   }
+
+
+
+  static filterByKeyWord() {
+    let passedThrough = Meditation.all.filter(meditation => meditation.title === searchBar().value)
+    art().innerHTML = ''
+
+    if(passedThrough != []) {
+    passedThrough.forEach(meditation => {
+      meditation.render()
+    })}
+
+  }
  
 }
